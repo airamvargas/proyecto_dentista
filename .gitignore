@@ -3,7 +3,6 @@ writable/
 #archivos key 
 .env
 #archivo app
-app/Config/App.p
+app/Config/App.php
 #archivo js
-/assets\js\env.j
-*.php
+/assets\js\env.js
