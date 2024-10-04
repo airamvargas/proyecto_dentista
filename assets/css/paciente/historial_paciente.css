@@ -1,0 +1,179 @@
+.clear {
+    clear: both !important;
+    margin-top: 20px !important;
+}
+
+#searchResult {
+    list-style: none !important;
+    padding: 0px !important;
+    width: 250px !important;
+    position: absolute !important;
+    margin-top: 39px;
+    min-width: 100%;
+    z-index: 99999999999999999999999999999999999999999;
+}
+
+#searchResult li {
+    background: lavender !important;
+    padding: 4px !important;
+    margin-bottom: 1px !important;
+}
+
+#searchResult li:nth-child(even) {
+    background: #45506B !important;
+    color: white !important;
+}
+
+#searchResult li:hover {
+    cursor: pointer !important;
+}
+
+/* ############  CP SEARCH ############### */
+
+#cpResult {
+    list-style: none !important;
+    padding: 0px !important;
+    width: 250px !important;
+    position: absolute !important;
+    margin-top: 39px;
+    min-width: 100%;
+    z-index: 99999999999999999999999999999999999999999;
+}
+
+#cpResult li {
+    background: lavender !important;
+    padding: 4px !important;
+    margin-bottom: 1px !important;
+}
+
+#cpResult li:nth-child(even) {
+    background: #45506B !important;
+    color: white !important;
+}
+
+#cpResult li:hover {
+    cursor: pointer !important;
+}
+
+.nutricion,
+.psicologia,
+.signos-medicos,
+.evidencia {
+    display: block;
+    overflow-x: auto !important;
+}
+
+@media(min-width:1200px) {
+    .nutricion {
+        display: inline-table;
+        overflow-x: hidden !important;
+    }
+}
+
+@media(min-width:600px) {
+    .psicologia {
+        display: inline-table;
+        overflow-x: hidden !important;
+    }
+}
+
+@media(min-width:768px) {
+    .signos-medicos {
+        display: inline-table;
+        overflow-x: hidden !important;
+    }
+}
+
+@media(min-width:1170px) {
+    .evidencia {
+        display: inline-table;
+        overflow-x: hidden !important;
+    }
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #4561a7;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #4561a7;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #4561a7;
+    border-top: none;
+}
+
+.nav-tabs {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #4561a7;
+}
+.nav-tabs .nav-link {
+    margin-right: .3rem;
+    border: 1px solid #4561a7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: white;
+    text-transform: uppercase;
+    background-color: #4561a7;
+    border-color: #4561a7 #4561a7 #4561a7;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
+    color: white;
+    background-color: #4561a7;
+    border-bottom: 1px solid #4561a7;
+}
+.nav-tabs > li > a,
+.nav-tabs a {
+    font-size: .8rem;
+    color: #4561a7;
+    text-transform: uppercase;
+}
+
+[data-title]:hover:after {
+  opacity: 1;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+
+[data-title]:after {
+  content: attr(data-title);
+  background-color: #dee2e6;
+  color: #343a40;
+  font-size: 14px;
+  position: absolute;
+  padding: 3px 10px;
+  bottom: -1.8em;
+  right: -10%;
+  white-space: nowrap;
+  box-shadow: 1px 1px 3px #222222;
+  opacity: 0;
+  border: 1px solid #111111;
+  z-index: 99999;
+  visibility: hidden;
+  border-radius: 6px;
+  
+}
+[data-title] {
+  position: relative;
+}

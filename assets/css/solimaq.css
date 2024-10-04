@@ -1,0 +1,531 @@
+:root {
+    --solimed: #52ceaa;
+    --solifood: #fabe12;
+    --soliwaste: #1da9c4;
+    --asiatodo: #ed2023;
+    --optisort: #0077c3;
+    --pyron: #373536;
+    --sortimex: #ff1a19;
+    --blanco: #fff;
+}
+
+html,
+body {
+    background-color: var(--blanco);
+}
+
+.linea {
+    border-bottom: 1px solid black;
+}
+
+
+/*Inicio de sesion solimed*/
+
+.bg-solimed {
+    background-image: url('../../assets/img/banner-solimed.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.btn-solimed {
+    background-color: var(--solimed);
+    color: #fff;
+    transition: all .6s ease;
+    font-weight: bold;
+}
+
+.btn-solimed:hover {
+    background-color: #fff;
+    color: var(--solimed);
+    border: 1px solid var(--solimed);
+    font-weight: bold;
+}
+
+.logo {
+    width: 350px;
+}
+
+.p-registro {
+    margin-bottom: 0;
+}
+
+
+/*Menu para dispositivos moviles*/
+
+.bg-menu {
+    background-color: #fff;
+}
+
+/*TABLAS REPORTES*/
+.tablas_reportes{
+    display: block;
+    overflow-x: auto !important;
+}
+
+.modulos,
+.ventas,
+.pagos,
+.etapas-venta,
+.productos,
+.empresas,
+.documentos-empresa,
+.clientes,
+.compras,
+.proveedores,
+.cotizaciones,
+.ingresos,
+.product_list,
+.imagenes-avance {
+    overflow-x: auto !important;
+    display: block;
+    background-color: transparent;
+}
+
+@media (min-width:1208px) {
+    .imagenes-avance {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:2150px) {
+    .ingresos {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:2150px) {
+    .productos {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:992px) {
+    .product_list {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:1573px) {
+    .proveedores {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:1450px) {
+    .cotizaciones {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:1570px) {
+    .compras {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:1363px) {
+    .clientes {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:1480px) {
+    .empresas {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:560px) {
+    .documentos-empresa {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:1240px) {
+    .modulos {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:670px) {
+    .etapas-venta {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:750px) {
+    .ventas {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:2140px) {
+    .pagos {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+.sl-menu-sub .nav-link:hover,
+.sl-menu-sub .nav-link:focus {
+    color: white !important;
+    background-color: #2b333e !important;
+}
+
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 650px;
+    max-width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.choose-file-button {
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.file-message {
+    font-size: small;
+    font-weight: 300;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.aling-center {
+    align-items: center !important;
+}
+
+.switch {
+    position: relative !important;
+    display: inline-block !important;
+    width: 60px !important;
+    height: 34px !important;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #1cac2f;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.sum-total {
+    position: absolute;
+    top: 9px;
+    right: 5px;
+}
+
+.empresa-cliente {
+    color: black;
+}
+
+.fecha, .etapa {
+    color: black;
+    font-weight: bold;
+    margin-top: 10px !important;
+}
+
+.status{
+    color: red;
+    font-style: italic;
+}
+
+.photo {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.total {
+    font-weight: bold;
+}
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 8px 7px !important;
+}
+
+.bd-radius {
+    border-radius: 8px;
+    border: 1px solid black !important;
+}
+
+.autoComplete_wrapper > input {
+    width: 100% !important;
+    height: 40px !important;
+    padding-left: 5px !important;
+    font-size: 1rem !important;
+    color: black !important;
+    border-radius: 8px;
+    border: 1px solid var(--mattes) !important;
+    outline: none;
+    background-color: var(--mattes) !important;
+}
+
+.autoComplete_wrapper {
+    display: inline-block;
+    position: relative;
+    width: 100% !important;
+}
+
+.info-paciente {
+    font-size: 1rem;
+    font-style: italic;
+    color: black;
+    margin-top: -5px;
+}
+
+.autoComplete_wrapper > ul > li:hover {
+    cursor: pointer;
+    background-color: rgba(201, 99, 235, 0.15) !important;
+}
+
+.autoComplete_wrapper > ul > li[aria-selected="true"] {
+    background-color: rgba(201, 99, 235, 0.15) !important;
+}
+
+.clear {
+    clear: both !important;
+    margin-top: 20px !important;
+}
+
+#cpResult {
+    list-style: none !important;
+    padding: 0px !important;
+    width: 250px !important;
+    position: absolute !important;
+    margin-top: 0
+    px !important;
+    min-width: 100%;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+#cpResult:hover {
+    overflow-y: auto;
+    height: 500px;
+}
+
+#cpResult li {
+    background-color: rgb(106, 106, 234) !important;
+    color: white;
+    padding: 4px !important;
+    margin-bottom: 1px !important;
+}
+
+#cpResult li:nth-child(even) {
+    background-color: white !important;
+    color: rgb(106, 106, 234) !important;
+}
+
+#cpResult li:hover {
+    cursor: pointer !important;
+}
+
+#total {
+    color: black;
+    font-size: 2rem !important;
+    font-style: italic !important;
+}
+
+#total_disponible {
+    color: black;
+    font-size: 1.5rem !important;
+    font-style: italic !important;
+}
+
+.aclaracion{
+    color: black;
+    font-size: 0.9rem !important;
+    font-style: italic !important;
+    font-weight: bolder !important;
+}
+
+
+
+
+
+.btn-circle.btn-sm {
+    width: 44px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 22px;
+    font-size: 8px;
+    text-align: center;
+}
+.btn-circle.btn-md {
+    width: 50px;
+    height: 50px;
+    padding: 7px 10px;
+    border-radius: 25px;
+    font-size: 10px;
+    text-align: center;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 650px;
+    max-width: 100%;
+    padding: 25px;
+    border: 1px dashed rgba(33, 140, 230, 10);
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.choose-file-button {
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(33, 140, 230, 0.6);
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.file-message {
+    font-size: small;
+    font-weight: 300;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.texto-precio {
+    text-align: center;
+    margin-top: 20px;
+    color: #0866C6 ;
+    font-weight: bolder !important;
+}
+
+.wd-10 {
+    width: 10% !important;
+}
+
+.wd-35 {
+    width: 35% !important;
+}
+
+.wrapbox{
+    white-space: normal !important;
+}
+
+.ver-estudios{
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+#crm_productos{
+    text-align: center !important;
+}
+
+.paciente{
+    color: black;
+    margin-left: 20px;
+}

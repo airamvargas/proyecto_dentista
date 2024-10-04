@@ -1,0 +1,6 @@
+table.dataTable thead th,
+table.dataTable thead td,
+#datatable1 tbody th,
+table.dataTable tbody td {
+    text-align: center !important;
+}

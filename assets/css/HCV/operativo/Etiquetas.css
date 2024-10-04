@@ -1,0 +1,45 @@
+@media print {
+    .hidden-print,
+    .hidden-print * {
+        display: none !important;
+    }
+
+    header, footer, nav, aside, head {
+        display: none !important;
+    }
+}
+
+.text-etiqueta-nombre{
+    color: black;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.text-etiqueta-fecha{
+    color: black;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.text-etiqueta-otros{
+    color: black;
+    font-size: 0.55rem;
+    font-weight: bold;
+}
+
+.barcode{
+    font-size: 15px !important;
+}
+
+.recepcionista{
+    color: black;
+    font-size: 0.7rem;
+}
+.sucursal{
+    font-size: 0.7rem;
+}
+
+.negro{
+    color: #000;
+    font-size: 0.55rem;
+}

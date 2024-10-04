@@ -1,0 +1,55 @@
+@media(min-width:992px){
+    .file-drop-area{
+        width: 467px !important;
+        left:441px;
+        padding: 12px;
+        margin-top: 14px;
+    }
+    #img-user{
+        height: 140px;
+        width: 140px;
+    }
+    .border-card{
+        border: 1px solid #337ab7;
+    }
+}
+
+/*Estilos a los recuadros de carga de archivos de la propiedad*/
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 650px;
+    max-width: 100%;
+    padding: 25px;
+    border: 1px dashed rgba(33, 140, 230, 10);
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.choose-file-button {
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(33, 140, 230, 0.6);
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.file-message {
+    font-size: small;
+    font-weight: 300;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}

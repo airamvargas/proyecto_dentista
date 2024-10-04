@@ -1,0 +1,15 @@
+
+
+@media (min-width: 1000px){
+    .user-name {
+        color: black !important;
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (max-width: 1000px){
+    .user-name {
+        color: black !important;
+        font-size: 1rem !important;
+    }
+}

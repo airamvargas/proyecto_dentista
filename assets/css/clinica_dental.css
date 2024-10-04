@@ -1,0 +1,270 @@
+html,
+body {
+    background-color: white;
+}
+
+
+.login-body {
+    background-image: url('../img/inicio.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    background-color: #fff;
+    border-radius: 17px;
+    filter: drop-shadow(4px 4px 3px #4e4c4c);
+    padding: 2.5rem 3rem;  
+    /* position: absolute; 
+    top: 10px;
+    right: -48px; */
+    opacity: 0.8;
+}
+
+.btn-ingresa{
+    background-color: #3e96a8;
+    border-radius: 17px;
+}
+
+.bg-ingresa {
+    background-color: #3e96a8;
+}
+
+.bg-edit{
+    background-color: #FF9900 !important;
+}
+
+.btn-agregar{
+    font-family: "honeymoon";
+    border-radius: 10px !important;
+    background-color: #20B2AA !important;
+    color: #FFFF;
+    font-size: 15px !important;
+    position: absolute;
+    top: 47%;
+    font-weight: bolder !important;
+}
+
+.btn-cancelar{
+    font-family: "honeymoon";
+    border-radius: 10px !important;
+    background-color: #94a5a4 !important;
+    color: #FFFF;
+    font-size: 15px !important;
+    font-weight: bolder !important;
+}
+
+.btn-add{
+    font-family: "honeymoon";
+    border-radius: 10px !important;
+    background-color: #20B2AA !important;
+    color: #FFFF !important;
+    font-size: 15px !important;
+    font-weight: bolder !important;
+}
+
+.btn-edit{
+    font-family: "honeymoon";
+    border-radius: 10px !important;
+    background-color: #FF9900 !important;
+    color: #FFFF;
+    font-size: 15px !important;
+    font-weight: bolder !important;
+}
+
+.btn-continuar{
+    font-family: "honeymoon";
+    border-radius: 10px !important;
+    background-color: #99CC33 !important;
+    color: #FFFF;
+    font-size: 15px !important;
+    font-weight: bolder !important;
+}
+
+.btn-otro-circle{
+    font-family: "honeymoon";
+    background-color: #663399 !important;
+    color: #FFFF;
+    font-size: 15px !important;
+    font-weight: bolder !important;
+}
+
+.btn-otro{
+    font-family: "honeymoon";
+    border-radius: 10px !important;
+    background-color: #663399 !important;
+    color: #FFFF;
+    font-size: 15px !important;
+    font-weight: bolder !important;
+}
+
+#cerrar_sesion{
+    background: none !important;
+    color: white;
+    border: none;
+}
+
+.wd-10 {
+    width: 10% !important;
+}
+
+.wd-15p{
+    width: 15px !important;
+}
+
+.wd-35 {
+    width: 35% !important;
+}
+
+.wrapbox{
+    white-space: normal !important;
+}
+
+
+h1{
+    font-family: "Paper_bold";
+    color: black;
+    font-size: 60px;
+}
+
+body {
+    font-family: "honeymoon" !important;
+    font-size: 1.2rem !important;
+    color: black !important;
+}
+
+.form-control, .dataTables_filter, input{
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    font-size: 1.2rem !important;
+    border-radius: 10px !important;
+}
+
+input, button, select, optgroup, textarea{
+    font-family: "honeymoon" !important;
+    font-size: 1.2rem !important;
+}
+
+.title-text{
+    font-weight: bolder !important;
+    font-size: 30px !important;
+}
+
+.table th{
+    font-size: 15px !important;
+    font-weight: bolder !important;
+}
+
+.autoComplete_wrapper{
+    display: inline-block !important;
+    position: relative !important;
+    width: 100% !important;
+}
+
+.autoComplete_wrapper > input{
+    width: 100% !important;
+    height: 40px !important;
+}
+
+/* FUENTES DE LETRAS */
+@font-face {
+    font-family: Paper_bold;
+    src: url("../fonts/Papernotes_Bold.ttf");
+} 
+
+@font-face {
+    font-family: Paper;
+    src: url("../fonts/Papernotes.ttf");
+}
+
+@font-face {
+    font-family: honeymoon;
+    src: url("../fonts/Champagnes.ttf");
+}
+
+
+@media (max-width: 992px) and (orientation: landscape) {
+    .login {       
+        top: 0px !important;
+        min-height: 77.6vh;
+        height: auto;
+        padding: 1.5rem 3rem;
+    } 
+    .login-body{
+        height: 440px;
+    }
+} 
+
+@media (min-width:350px){
+    .login{
+        top: 170px;
+        right: -20px;
+    }   
+}
+
+@media (min-width:360px){
+    .login{
+        top: 48px;
+    }   
+}
+
+@media (min-width:370px){
+    .login{
+        top: 55px;
+        right: -14px;
+    }   
+}
+
+@media (min-width:400px){
+    .login{
+        right: 10px;
+        top: 93px;
+    }   
+}
+
+@media (min-width:450px){
+    .login{
+        right: 30px;
+    }   
+}
+
+@media (min-width:500px){
+    .login{
+        right: 55px;
+    }   
+}
+
+@media (min-width:600px){
+    .login{
+        right: 100px;
+    }   
+}
+
+@media (min-width:768px){
+    .login{
+        right: 150px;
+    }   
+}
+
+@media (min-width:900px){
+    .login{
+        top: 175px;
+        right: 165px;
+    }   
+}
+
+@media (min-width:1100px){
+    .login{
+        top: 104px;
+        right: 190px;
+    }   
+}

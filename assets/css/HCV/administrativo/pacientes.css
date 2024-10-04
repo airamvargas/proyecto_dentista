@@ -1,0 +1,16 @@
+body{
+    background-color: white;
+}
+#tb_pacientes {
+    text-align: center;
+    overflow-x: auto !important;
+    display: block;
+    background-color: transparent;
+}
+
+@media (min-width:534px) {
+    #tb_pacientes {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}

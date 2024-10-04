@@ -1,0 +1,43 @@
+body{
+    color: black;
+    background-color: white;
+}
+
+.tablinks {
+    background-color: #337ab7;
+    border: 1px solid #337ab7;
+    color: white;
+    padding: 6px !important;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 0px !important;
+    margin-right: 3px;
+    transition: .5s all ease;
+}
+
+.tablinks:hover,
+.tablinks.active{
+    background-color: white;
+    color: #337ab7;
+    cursor: pointer;
+}
+
+.tabcontent{
+    border: 1px solid #337ab7;
+}
+
+.encabezado-historia{
+    color: #337ab7;
+    font-weight: bold;
+}
+.form-control,
+select {
+    border-radius: 7px !important;
+    border: 1px solid rgba(0, 0, 0, 0.95) !important;
+}
+
+@media(min-width: 992px){
+    .input-piercing{
+        line-height: 41px;
+    }
+}

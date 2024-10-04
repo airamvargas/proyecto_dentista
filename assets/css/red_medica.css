@@ -1,0 +1,359 @@
+/*.bordeado{
+    border-radius: 7px 7px 7px 7px;
+}*/
+/*Botones*/
+.primario,
+.primrio:active{
+    color: #fff !important;
+    background-color: #0866C6 !important;
+    border-color: #0866C6 !important;  
+    -webkit-transition: .5s all ease;  
+    -o-transition: .5s all ease;  
+    transition: .5s all ease;   
+}
+.primario:hover{
+    opacity: .9;
+}
+
+.envio-exito,
+.envio-exito:active{
+    color: #fff !important;
+    background-color: #23BF08 !important;
+    border-color: #23BF08 !important;  
+    -webkit-transition: .5s all ease;  
+    -o-transition: .5s all ease;  
+    transition: .5s all ease;   
+}
+.envio-exito:hover{
+    opacity: .9;
+}
+
+.alerta,
+.alerta:active{
+    color: #fff !important;
+    background-color: #F49917 !important;
+    border-color: #F49917 !important;  
+    -webkit-transition: .5s all ease;  
+    -o-transition: .5s all ease;  
+    transition: .5s all ease;  
+}
+.alerta:hover{
+    opacity: .9;
+}
+
+.peligro-irreversible{
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    -webkit-transition: .5s all ease;
+    -o-transition: .5s all ease;
+    transition: .5s all ease;    
+}
+.peligro-irreversible:active,
+.peligro-irreversible:hover{
+    background-color: #c82333 !important;
+}
+
+.secundario,
+.secundario:active{
+    color: #fff !important;
+    background-color: #1CAF9A !important;
+    border-color: #1CAF9A !important;
+    -webkit-transition: .5s all ease;
+    -o-transition: .5s all ease;
+    transition: .5s all ease;    
+}
+.secundario:hover{
+    opacity: .9;
+}
+
+.terciario,
+.terciario:active{
+    color: #fff !important;
+    background-color: #6610f2 !important;
+    border-color: #6610f2 !important;
+    -webkit-transition: .5s all ease;
+    -o-transition: .5s all ease;
+    transition: .5s all ease;   
+}
+.terciario:hover{
+    opacity: .9;
+}
+
+.cuaternario,
+.cuaternario:active{
+    color: #fff !important;
+    background-color: #6f42c1 !important;
+    border-color: #6f42c1 !important; 
+    -webkit-transition: .5s all ease; 
+    -o-transition: .5s all ease; 
+    transition: .5s all ease;    
+}
+.cuaternario:hover{
+    opacity: .9;
+}
+
+.quintagenario,
+.quintagenario:active{
+    color: #fff !important;
+    background-color: #e83e8c !important;
+    border-color: #e83e8c !important;    
+    -webkit-transition: .5s all ease;    
+    -o-transition: .5s all ease;    
+    transition: .5s all ease; 
+}
+.quintagenario:hover{
+    opacity: .9;
+}
+
+
+/***********************************************
+                HISTORIA CLINICA
+************************************************/
+/*Tamaño del textarea*/
+.perpat-textarea{
+    width: 230px;
+}
+@media(min-width:400px){
+    .perpat-textarea{
+        width: 300px;
+    }
+}
+@media(min-width:500px){
+    .perpat-textarea{
+        width: 400px;
+    }
+}
+@media(min-width:600px){
+    .perpat-textarea{
+        width: 447px;
+    }
+}
+@media(min-width:700px){
+    .perpat-textarea{
+        width: 540px;
+    }
+}
+@media(min-width:800px){
+    .perpat-textarea{
+        width: 650px;
+    }
+}
+@media(min-width:900px){
+    .perpat-textarea{
+        width: 720px;
+    }
+}
+@media(min-width:1200px){
+    .perpat-textarea{
+        width: 815px;
+    }
+}
+@media(min-width:1300px){
+    .perpat-textarea{
+        width: 1085px;
+    }
+}
+@media(min-width:1300px){
+    .perpat-textarea{
+        width: 1140px;
+    }
+}
+
+/*Tamaño de las tablas con scroll dependiendo el ancho de pantalla para historial clinico*/
+.enfermedades,
+.animales,
+.servicios,
+.alimentos,
+.androgenicos,
+.ginecoobstetricos,
+.alergias,
+.cirugias,
+.infecto,
+.infancia,
+.base,
+.nota{
+    overflow-x: auto !important;
+    display: block;
+    background-color: transparent;
+}
+
+@media (min-width:370px){
+    .ginecoobstetricos, 
+    .alergias{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:380px){
+    .nota{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:387px){
+    .animales,
+    .servicios{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:404px){
+    .androgenicos{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+@media (min-width:420px){
+    .infecto{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+@media (min-width:464px){
+    .infancia{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+@media (min-width:488px){
+    .alimentos{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+@media (min-width:410px){
+    .cirugias{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+@media (min-width:652px){
+    .base{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+@media (min-width:768px){
+    .enfermedades{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+@media (min-width:992px){
+    .alimentos{
+        overflow-x: auto !important;
+        display: block;
+    }
+}
+@media (min-width:1098px){
+    .alimentos{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+/*************************************************
+                    NOTA MEDICA
+************************************************/
+/*Tamaño de las tablas con scroll para nota medica*/
+.historial-diagnosticos,
+.diagnostico-nutricional,
+.receta,
+.procedimientos{
+    overflow-x: auto !important;
+    display: block;
+    background-color: transparent;
+}
+
+@media (min-width:540px){
+    .historial-diagnosticos{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:746px){
+    .receta{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:420px){
+    .procedimientos{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+@media (min-width:790px){
+    .diagnostico-nutricional{
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}
+
+/*Tamaño del textarea*/
+.historial-clinico{
+    width: 210px;
+}
+
+@media(min-width:360px){
+    .historial-clinico{
+        width: 240px;
+    }
+}
+@media(min-width:500px){
+    .historial-clinico{
+        width: 376px;
+    }
+}
+@media(min-width:700px){
+    .historial-clinico{
+        width: 500px;
+    }
+}
+@media(min-width:800px){
+    .historial-clinico{
+        width: 600px;
+    }
+}
+@media(min-width:900px){
+    .historial-clinico{
+        width: 700px;
+    }
+}
+@media(min-width:1000px){
+    .historial-clinico{
+        width: 600px;
+    }
+}
+@media(min-width:1100px){
+    .historial-clinico{
+        width: 700px;
+    }
+}
+@media(min-width:1200px){
+    .historial-clinico{
+        width: 800px;
+    }
+}
+@media(min-width:1300px){
+    .historial-clinico{
+        width: 900px;
+    }
+}
+@media(min-width:1400px){
+    .historial-clinico{
+        width: 1000px;
+    }
+}
+@media(min-width:1500px){
+    .historial-clinico{
+        width: 1100px;
+    }
+}

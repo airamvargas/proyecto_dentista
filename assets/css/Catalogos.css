@@ -1,0 +1,23 @@
+body{
+    background-color: var(--blanco) !important;
+}
+
+table.dataTable thead th,
+table.dataTable thead td,
+#datatable1 tbody th,
+table.dataTable tbody td {
+    text-align: center !important;
+}
+
+#tb_empresa {
+    overflow-x: auto !important;
+    display: block;
+    background-color: transparent;
+}
+
+@media (min-width:1600px) {
+    #tb_empresa {
+        overflow-x: hidden !important;
+        display: inline-table;
+    }
+}

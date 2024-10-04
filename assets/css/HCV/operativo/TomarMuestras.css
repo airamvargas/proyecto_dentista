@@ -1,0 +1,9 @@
+.bd-fila {
+    border-right: 1px solid black;
+}
+
+#muestrasPendientes {
+    height: 550px;
+    overflow-y: scroll;
+}
+

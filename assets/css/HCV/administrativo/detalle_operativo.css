@@ -1,0 +1,73 @@
+#map {
+    height: 300px;
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+}
+
+.clear {
+    clear: both !important;
+    margin-top: 20px !important;
+}
+
+#searchResult {
+    list-style: none !important;
+    padding: 0px !important;
+    width: 250px !important;
+    position: absolute !important;
+    margin-top: 39px;
+    min-width: 100%;
+    z-index: 99999999999999999999999999999999999999999;
+}
+
+#searchResult li {
+    background: lavender !important;
+    padding: 4px !important;
+    margin-bottom: 1px !important;
+}
+
+#searchResult li:nth-child(even) {
+    background: #45506B !important;
+    color: white !important;
+}
+
+#searchResult li:hover {
+    cursor: pointer !important;
+}
+
+/* ############  CP SEARCH ############### */
+
+#cpResult {
+    list-style: none !important;
+    padding: 0px !important;
+    width: 250px !important;
+    position: absolute !important;
+    margin-top: 39px;
+    min-width: 100%;
+    z-index: 99999999999999999999999999999999999999999;
+}
+
+#cpResult li {
+    background: lavender !important;
+    padding: 4px !important;
+    margin-bottom: 1px !important;
+}
+
+#cpResult li:nth-child(even) {
+    background: #45506B !important;
+    color: white !important;
+}
+
+#cpResult li:hover {
+    cursor: pointer !important;
+}
+
+#succes-alert {
+    display: none !important;
+
+}

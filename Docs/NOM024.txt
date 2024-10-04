@@ -1,0 +1,33 @@
+Normas
+	http://www.dgis.salud.gob.mx/contenidos/normatividad/normas_gobmx.html
+
+NOM-024-SSA3-2012.pdf
+	http://www.dgis.salud.gob.mx/descargas/normatividad/normas/DOF-30NOV12-NOM-024-SSA3-2012.pdf
+
+NOM-035-SSA3-2012
+	http://www.dgis.salud.gob.mx/descargas/normatividad/normas/DOF-30NOV12-NOM-035-SSA3-2012.pdf	
+
+DIRECCIÓN GENERAL DE INFORMACIÓN EN SALUD
+	http://www.dgis.salud.gob.mx/
+
+SIRES
+	Sistema de Información de Registro Electrónico para la Salud
+
+Procedimiento de Certificación
+	http://www.dgis.salud.gob.mx/contenidos/intercambio/iis_procedimiento_certificacion_gobmx.html
+
+SIRES Certificados en la NOM-024-SSA3-2012
+	http://www.dgis.salud.gob.mx/contenidos/intercambio/sires_certificacion_gobmx.html
+
+Para que es la NOM es para
+	Para que los Prestadores de Servicios de Salud
+	logren la Interoperabilidad Semántica e Interoperabilidad Técnica 
+	en escenarios concretos de intercambio de información entre SIRES.
+
+
+Guías de Intercambio de Información en Salud (GIIS)
+	documentos técnicos enfocados en lograr la Interoperabilidad Técnica e Interoperabilidad Semántica entre SIRES
+	http://www.dgis.salud.gob.mx/contenidos/intercambio/iis_guias_gobmx.html
+
+Guías de Intercambio de Información (documentacion)
+	http://gobi.salud.gob.mx/

@@ -42,6 +42,7 @@ defined('MONTH')  || define('MONTH', 2592000);
 defined('YEAR')   || define('YEAR', 31536000);
 defined('DECADE') || define('DECADE', 315360000);
 
+
 /*
  | --------------------------------------------------------------------------
  | Exit Status Codes
@@ -77,3 +78,33 @@ defined('EXIT_USER_INPUT')     || define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       || define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+//asign
+defined('path') || define('path','http://localhost/solimaq/');
+defined('path_file') || define('path_file','http://localhost/solimaq/public/');
+
+
+//CONSTANTE DE TAXT
+define('TAXT',16); 
+
+//CONSTANT TITULO 
+define('PROYECT','WEBCORP');
+
+//LIGA  DE TAXT
+define('WIKI_URL','https://wiki.medicinae.app/');
+
+//TIPO PAGO
+define('PAGO_GLOBAL_T', 11); // EN PRODUCCION ES 6 // EN DEV ES 11
+define('PENDIENTE_T', 10); //EN PRODUCCION ES = 5 // EN DEV ES 10
+define('PARCIAL_T', 12); //EN PRODUCCION ES 7 // EN DEV ES 12
+
+//FORMA DE PAGO
+define('PAGO_GLOBAL_F', 7); // EN PRODUCCION ES 5 // EN DEV ES 7
+define('PENDIENTE_F', 1); // EN PRODUCCION IGUAL ES 1 // EN DEV ES 1
+define('PARCIAL_F', 8); // EN PRODUCCION ES 2 // EN DEV ES 8
+
+//SIN EMPRESA
+define('SIN_EMPRESA', 19); // EN PRODUCCION ES 4 // EN DEV ES 19
+
+//SIN CONVENIO
+define('SIN_CONVENIO', 28); //EN PROD ES 13 // EN DEV ES 28
