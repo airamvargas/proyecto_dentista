@@ -23,7 +23,7 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-		public $baseURL = '';
+		public $baseURL = 'http://localhost/proyecto_dentista/public/index.php/';
 		//produccion
 		//public $baseURL = 'http://stage-app.doisy.mx/public/index.php/';
 	/**
