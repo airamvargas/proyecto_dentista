@@ -10,24 +10,23 @@ class Model_tratamientos extends Model
     protected $primaryKey = 'id';
     protected $returnType="array";
     protected $useSoftDeletes = true;
-    protected $allowedFields = ['nombre','sex', 'f_nacimiento', 'lugar_nac', 'tel_casa', 'tel_cel', 'direccion', 'created_at', 'updated_at', 'deleted_at'];
+    protected $allowedFields = ['nombre','precio', 'observaciones', 'created_at', 'updated_at', 'deleted_at'];
     protected $useTimestamps = true;
     protected $deletedField  = 'deleted_at';
     protected $validationRules    = [];
     protected $validationMessages = [];
     protected $skipValidation     = false;
 
-    public function readPacientes($busquedaaa){
+    public function readProcedimientos(){
         return $this->asArray()
-        ->select('nombre, sex, f_nacimiento, lugar_nac, tel_casa, tel_cel, direccion')
-        ->like('pacientes.nombre', $busqueda)
+        ->select('*')
         ->find();
     }
 
-    public function readPaciente($id){
+    public function readProcedimientoUp($id){
         return $this->asArray()
-        ->select('nombre, sex, f_nacimiento, lugar_nac, tel_casa, tel_cel, direccion')
-        ->where('pacientes.id', $id)
+        ->select('*')
+        ->where('tratamientos.id', $id)
         ->find();
     }
 }

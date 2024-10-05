@@ -4,7 +4,7 @@ namespace App\Controllers\Api\Catalogos;
 use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 helper('Acceso');
-use App\Models\Catalogos\Model_procedimientos as model;
+use App\Models\Catalogos\Model_tratamientos as model;
 
 class Procedimientos extends ResourceController 
 {

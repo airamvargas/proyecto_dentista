@@ -20,7 +20,7 @@
             </div><!-- sl-page-title -->
             <div class="col-md-3 pl-0">
                 <a id="new_proc" href="" class="btn btn-add" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus mr-1"
-                        aria-hidden="true"></i>Nuevo <?= $title ?></a><br><br>
+                        aria-hidden="true"></i>Nuevo tratamiento</a><br><br>
             </div>
             <div class="">
                 <table id="procedimientos" class="table display table-responsive product_list" style="width: 100%;">

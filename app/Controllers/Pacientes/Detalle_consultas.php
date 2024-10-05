@@ -5,7 +5,7 @@ use App\Controllers\BaseController;
 
 use App\Models\Access;
 
-class Historia_clinica extends BaseController {
+class Detalle_consultas extends BaseController {
     public function index() {
         $uri = service('uri');
         $id_paciente = $uri->getSegment(4);
@@ -35,12 +35,12 @@ class Historia_clinica extends BaseController {
             $data_header['styles'] = ["starlight.css", "clinica_dental.css",  "../lib/datatables/jquery.dataTables.css"];
             
             //Vars
-            $data_header['title'] = "Principal";
-            $data_header['description'] = "Main Admin";
-            $data_left['menu'] = get_menu();
+            $data_header['title'] = "Detalle de Consultas";
+            $data_header['description'] = "";
+            $data['id_paciente'] = $id_paciente;
             echo view('header', $data_header);
             echo view('head_panel');
-            echo view('Pacientes/historia_clinica');
+            echo view('Pacientes/detalles_consultas', $data);
             echo view('right_panel');
             echo view('fotter_panel', $data_fotter);
         } else{

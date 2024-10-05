@@ -31,7 +31,7 @@
             </div>
 
             <div class="">
-                <table id="datatable" class="table display responsive nowrap">
+                <table id="datatable" class="table display table-responsive product_list dataTable no-footer">
                     <thead>
                         <tr>
                             <th class="wd-15p text-center">NOMBRE</th>
@@ -41,6 +41,7 @@
                             <th class="wd-15p text-center">TELÉFONO CELULAR</th>
                             <th class="wd-15p text-center">DOMICILIO</th>
                             <th class="wd-15p text-center">HISTORIA CLINICA</th>
+                            <th class="wd-15p text-center">Historial citas</th>
                             <th class="wd-15p text-center">ACCIONES</th>
                         </tr>
                     </thead>

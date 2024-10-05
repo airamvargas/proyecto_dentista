@@ -3,15 +3,15 @@
 namespace App\Controllers\Catalogos;
 use App\Controllers\BaseController;
 
-class Procedimientos extends BaseController
+class Tratamientos extends BaseController
 {
 
     public function index() {
         $session = session();
 
         //variables
-        $data_header['title'] = "Procedimientos";
-        $data_header['description'] = "Listado de procedimientos que pueden ser realizados";
+        $data_header['title'] = "Tratamientos";
+        $data_header['description'] = "Listado de tratamientos que pueden ser realizados";
 
         //Documents javascript 
         $data_fotter['scripts'] = [
