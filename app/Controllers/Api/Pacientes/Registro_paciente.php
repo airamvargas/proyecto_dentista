@@ -40,14 +40,13 @@ class Registro_paciente extends ResourceController
             'direccion' => $request->getPost('direccion')
 
         ];
-        
-        $id = $this->model->insert($data);
-
-        if($id){
+        //var_dump($data);
+        $this->model->insert($data);
+        $affected_rows = $this->db->affectedRows();
+        if($affected_rows){
             $mensaje = [
               'status' => 200,
-              'msg' => "AGREGADO CON EXITO",
-              'id' => $id
+              'msg' => "AGREGADO CON EXITO"
             ];
             return $this->respond($mensaje);
         }else{
@@ -56,7 +55,7 @@ class Registro_paciente extends ResourceController
                 'msg' => "Hubo un error al guardar los datos. Intenta de nuevo",    
             ]; 
             return $this->respond($mensaje);         
-        } 
+        }
     }
 
     public function readPacientes($busqueda){

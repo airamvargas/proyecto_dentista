@@ -14,7 +14,7 @@
           <a class="nav-link" href="<?=base_url()."/Administrador/Pacientes"?>">PACIENTES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">AGENDAR CITA</a>
+          <a class="nav-link" href="<?=base_url()."/Agendar_cita"?>">AGENDAR CITA</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?=base_url()."/Presupuesto/Cotizacion"?>">PRESUPUESTO</a>

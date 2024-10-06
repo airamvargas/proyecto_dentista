@@ -19,10 +19,9 @@
 <div class="container-fluid">
     <div class="sl-pagebody">
         <div class="card pd-20 pd-sm-40">
-
             <div class="sl-page-title">
-
-                <!--  <p class="mg-b-20 mg-sm-b-30">Catálogo de productos</p> -->
+                <h5 class="text-uppercase title-text"><?= $title ?></h5>
+                <p><?= $description ?> </p>
             </div><!-- sl-page-title -->
 
             <div class="col-md-3 pl-0">

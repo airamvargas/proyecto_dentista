@@ -6,9 +6,9 @@ $(document).on('click', '#agregar_btn', function(){
 });
   
 $(document).on('submit', '#registroPaciente', function(e) {
+    console.log("Hola");
     e.preventDefault();
-    //document.getElementById('btn_eliminar').disabled = true;
-    $('#loader').toggle();
+    //$('#loader').toggle();
     let url = `${BASE_URL}Api/Pacientes/Registro_paciente/registro_paciente`;
     let FORMDATA = new FormData($(this)[0]);
     let form = $('#registroPaciente');

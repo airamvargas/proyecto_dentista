@@ -73,7 +73,7 @@ class Procedimientos extends ResourceController
         $this->model->update($id, $data);
         //retun affected rows into database
         $affected_rows = $this->db->affectedRows();
-        if($id){
+        if($affected_rows){
             $mensaje = [
               'status' => 200,
               'msg' => "DATOS AGREGADOS",
