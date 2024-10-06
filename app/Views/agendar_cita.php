@@ -24,7 +24,7 @@
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-12">
-                <h3 class="text-center mt-5">Escoge el día y la hora que deseas</h3>
+                <h3 class="text-center mt-5">Escoge el día y la hora</h3>
                 <div id="calendar"></div>
             </div>
         </div>
@@ -32,7 +32,7 @@
 </section>
 
 <div id="modal_cita" class="modal fade">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content bd-0 tx-14">
             <div class="modal-header bg-teal pd-x-20">
                 <h6 class="tx-14 mg-b-0 tx-uppercase text-white tx-bold">Agendar cita</h6>
@@ -45,6 +45,10 @@
                     <div class="form-group">
                         <label class="form-control-label">Fecha y hora: </label>
                         <input id="fechaH" class="form-control" type="text" name="fecha" value="" placeholder="" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Nombre paciente: </label>
+                        <input id="autoComplete" class="form-control" type="text" name="paciente" value="" placeholder="">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Comentarios: <span class="tx-danger"></span></label>
@@ -97,15 +101,7 @@
 </style>
 
 <script>
-    let id_propiedad = <?php echo json_encode($id_propiedad); ?>;
-    let id_propietario = <?php echo json_encode($id_propietario); ?>;
-    /*alert(id_propietario);*/
-</script>
-
-
-
-<script>
-    get_fechas();
+    //get_fechas();
     calendario();
     
 
@@ -172,7 +168,7 @@
                         text: "No se puede crear la cita",
                         duration: 5000,
                         className: "info",
-                        avatar : "../../../../../assets/icons/advertencia.png",
+                        avatar : BASE_URL + "../../assets/img/advertencia.png",
                         style: {
                             background: "linear-gradient(to right, #0370b8, #0FB6FB)",
                         },
