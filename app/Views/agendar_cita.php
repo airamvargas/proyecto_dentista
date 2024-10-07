@@ -1,5 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/locales-all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
@@ -48,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Nombre paciente: </label>
-                        <input id="autoComplete" class="form-control" type="text" name="paciente" value="" placeholder="">
+                        <input id="autoComplete" class="form-control" type="text" name="paciente" style="background-color: white !important; color: rgba(0,0,0,.8) !important; border: black solid 1px !important;">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Comentarios: <span class="tx-danger"></span></label>
@@ -299,5 +300,64 @@
             contentType: false,
             processData: false
         });
+    });
+
+    const autoCompleteJS = new autoComplete({
+        placeHolder: "Buscar paciente...",
+        threshold: 2,
+        diacritics: true,
+        data: {
+            src: async (query) => {
+                try {
+                    const source = await fetch(`${BASE_URL}Searchs/Rest_search/readStudies/${query}/${ID_CAT}`);
+                    const data = await source.json();
+                    return data;
+                    
+                } catch (error) {
+                    return error;
+                }
+            },
+            keys: ["study"],
+        },
+    
+        resultsList: {
+            tag: "ul",
+            id: "autoComplete_list",
+            class: "results_list",
+            destination: "#autoComplete",
+            position: "afterend",
+            maxResults: 100,
+            noResults: true,
+            element: (list, data) => {
+                if(!data.results.length){
+                    const message = document.createElement("div");
+                    message.setAttribute("class", "no_result");
+                    message.innerHTML = `<span class="pd-x-20">Ningún resultado para "${data.query}".</span> `;
+                    list.appendChild(message);
+                }
+                list.setAttribute("data-parent", "food-list");
+            },
+        },
+        
+        resultItem: {
+            highlight: true,
+            element: (item, data) => {
+                item.innerHTML = `
+                <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                ${data.match}
+                </span>`;
+            },
+    
+        },
+    
+        events: {
+            input: {
+                selection: (event) => {
+                    $("#autoComplete").val(event.detail.selection.value.study);
+                    $("#id_study").val(event.detail.selection.value.id_product);
+                    $("#id_packet ").val(id_packet);
+                }
+            }
+        }
     });
 </script>
