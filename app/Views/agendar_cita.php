@@ -1,10 +1,10 @@
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/locales-all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css">
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input id="id_propiedad" class="form-control" type="hidden" name="propiedad">
+                        <input id="id_paciente" class="form-control" type="hidden" name="id_paciente">
                     </div>
                 </form>
             </div>
@@ -104,6 +104,7 @@
 <script>
     //get_fechas();
     calendario();
+    autoComplete_input();
     
 
     function calendario(result) {
@@ -159,8 +160,6 @@
                             var fecha = Date.parse(info.dateStr)
                             var fecha2 = new Date(fecha).toLocaleString();
                             $('#fechaH').val(fecha2);
-                            $("#id_propiedad").val(id_propiedad);
-                            //alert(fecha2);
                             $('#modal_cita').modal();
                         break;
                     }
@@ -199,127 +198,25 @@
     
     }
 
-    function get_fechas() {
-        //$('#loader').toggle();
-
-        let propietario = {
-            id_propietario: id_propietario,
-        };
-
-        var url_citas = `${BASE_URL}Mattes/Api/Arrendatario_api/Agendarcita_rest/get_fechas`;
-
-        $.ajax({
-            url: url_citas,
-            type: "POST",
-            data: JSON.stringify(propietario),
-            dataType: 'json',
-            success: function(result) {
-                console.log(result);
-                // $('#loader').toggle();
-                calendario(result);
-            },
-            error: function(xhr, resp, text) {
-                console.log(xhr, resp, text);
-                $('#loader').toggle();
-                $('#error-alert').show();
-                $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
-
-            }
-        })
-    }
-
-    $("#send_cita").on("click", function() {
-        $('#modaldemo2').modal('toggle');
-        $('#modal_alert').modal('toggle');
-    });
-
-    $("#agendar_cita").on("click", function() {
-        $('#loader').toggle();
-
-        //let id_prop = id_propietario;
-        let id_propiedad = $("#id_propiedad").val();
-        let fecha = $('#fechaH').val();
-        let observacion = $('#comentarios').val();
-
-        var url_str = `${BASE_URL}Mattes/Api/Arrendatario_api/Agendarcita_rest`;
-
-        let json = {
-            id_propietario: id_propietario,
-            id_propiedad: id_propiedad,
-            fecha: fecha,
-            observacion: observacion,
-        };
-
-        $.ajax({
-            url: url_str,
-            type: 'POST',
-            data: JSON.stringify(json),
-            dataType: 'json',
-            success: function(data) {
-                if (data.status == 200) {
-                    Toastify({
-                        text: data.messages.success,
-                        duration: 3000,
-                        className: "info",
-                        // avatar: "../../assets/img/logop.png",
-                        style: {
-                            background: "linear-gradient(to right, #00b09b, #96c93d)",
-                        },
-                        offset: {
-                            x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                            y: 90 // vertical axis - can be a number or a string indicating unity. eg: '2em'
-                        },
-
-                    }).showToast();
-                    $('#loader').toggle();
-                    $('#modal_alert').modal('toggle');
-                    $('#modal_cita').modal('toggle');
-                    get_fechas();
-                    setTimeout(function() { 
-                        location.href = `${BASE_URL}mensajes`;
-                    },2000);
-
-                } else {
-                    Toastify({
-                        text: data.messages.success,
-                        duration: 3000,
-                        className: "info",
-                        // avatar: "../../assets/img/logop.png",
-                        style: {
-                            background: "linear-gradient(to right, #00b09b, #96c93d)",
-                        },
-                        offset: {
-                            x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                            y: 90 // vertical axis - can be a number or a string indicating unity. eg: '2em'
-                        },
-
-                    }).showToast();
-                }
-            },
-            cache: false,
-            contentType: false,
-            processData: false
-        });
-    });
-
-    const autoCompleteJS = new autoComplete({
+    //FUNCION PARA EL INPUT DE AUTOCOMPLETE
+    function autoComplete_input() {
+        const autoCompleteJS = new autoComplete({
         placeHolder: "Buscar paciente...",
         threshold: 2,
         diacritics: true,
         data: {
-            src: async (query) => {
-                try {
-                    const source = await fetch(`${BASE_URL}Searchs/Rest_search/readStudies/${query}/${ID_CAT}`);
-                    const data = await source.json();
-                    return data;
-                    
-                } catch (error) {
-                    return error;
-                }
-            },
-            keys: ["study"],
+        src: async (query) => {
+            try {
+                const source = await fetch(`${BASE_URL}Api/Pacientes/Registro_paciente/readPacientes/${query}`);
+                const data = await source.json(); 
+                return data;
+            } catch (error) {
+                return error;
+            }
         },
-    
+            keys: ["nombre", "tel_cel"],
+        },
+
         resultsList: {
             tag: "ul",
             id: "autoComplete_list",
@@ -330,34 +227,48 @@
             noResults: true,
             element: (list, data) => {
                 if(!data.results.length){
-                    const message = document.createElement("div");
-                    message.setAttribute("class", "no_result");
-                    message.innerHTML = `<span class="pd-x-20">Ningún resultado para "${data.query}".</span> `;
-                    list.appendChild(message);
+                $('#actualizar').hide();
+                const message = document.createElement("div");
+                message.setAttribute("class", "no_result");
+                message.innerHTML = `<span class="pd-x-20">Ningún resultado para "${data.query}". Agregue los datos del paciente para continuar.</span> 
+                <br><br>
+                <div class="pd-x-20">
+                    <button id="agregar" type="submit" class="btn btn-success pd-x-20 float-right"><i class="fa fa-plus" aria-hidden="true"></i> AGREGAR PACIENTE</button>
+                </div>`;
+                list.appendChild(message);
+                } else {
+                const message = document.createElement("div");
+                message.setAttribute("class", "no_result");
+                list.appendChild(message);
                 }
                 list.setAttribute("data-parent", "food-list");
             },
         },
         
         resultItem: {
-            highlight: true,
+        highlight: true,
             element: (item, data) => {
+                
                 item.innerHTML = `
-                <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; color: black !important; font-size: 1.2rem !important">
                 ${data.match}
+                </span>
+                
+                <span style="display: flex; align-items: center; font-size: 13px; font-weight: 100; color: black !important; text-transform: uppercase; font-size: 1rem !important" color: rgba(0,0,0,.2);">
+                ${data.value.tel_cel}
                 </span>`;
+                $('#actualizar').show();
             },
-    
         },
-    
+
         events: {
             input: {
                 selection: (event) => {
-                    $("#autoComplete").val(event.detail.selection.value.study);
-                    $("#id_study").val(event.detail.selection.value.id_product);
-                    $("#id_packet ").val(id_packet);
+                    $("#autoComplete").val(event.detail.selection.value.nombre)
+                    $("#id_paciente").val(event.detail.selection.value.id)
                 }
             }
         }
     });
+    }
 </script>

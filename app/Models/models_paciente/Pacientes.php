@@ -19,7 +19,7 @@ class Pacientes extends Model
 
     public function readPacientes($busqueda){
         return $this->asArray()
-        ->select('nombre, sex, f_nacimiento, lugar_nac, tel_casa, tel_cel, direccion')
+        ->select('id, nombre, sex, f_nacimiento, lugar_nac, tel_casa, tel_cel, direccion')
         ->like('pacientes.nombre', $busqueda)
         ->find();
     }
