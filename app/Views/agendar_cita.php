@@ -88,8 +88,8 @@
             </div>
 
             <div class="modal-footer">
-                <button id="agendar_cita" type="button" class="btn btn-teal  pd-x-20"><i class="fa fa-check-circle-o mr-1" aria-hidden="true"></i>Aceptar</button>
-                <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal"><i class="fa fa-times-circle mr-1" aria-hidden="true"></i>Cancelar</button>
+                <button id="agendar_cita" type="button" class="btn btn-add  pd-x-20"><i class="fa fa-check-circle-o mr-1" aria-hidden="true"></i>Aceptar</button>
+                <button type="button" class="btn btn-cancelar pd-x-20" data-dismiss="modal"><i class="fa fa-times-circle mr-1" aria-hidden="true"></i>Cancelar</button>
             </div>
         </div>
     </div><!-- modal-dialog -->
