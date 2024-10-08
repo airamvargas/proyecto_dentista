@@ -10,7 +10,7 @@ class Agendar_cita extends BaseController {
         $session = session();
         $data_left['menu'] = get_menu();
         //Js Scripts ['script1.js' , 'script2.js' , 'script3.js']
-        $data_fotter['scripts'] = ["../lib/datatables/jquery.dataTables.js", "../lib/datatables-responsive/dataTables.responsive.js", "Generales/Accesos.js"];
+        $data_fotter['scripts'] = ["../lib/datatables/jquery.dataTables.js", "../lib/datatables-responsive/dataTables.responsive.js", "Generales/Fetch.js"];
 
         //Css Shets
         $data_header['styles'] = ["starlight.css", "botones.css", "clinica_dental.css"];

@@ -201,74 +201,74 @@
     //FUNCION PARA EL INPUT DE AUTOCOMPLETE
     function autoComplete_input() {
         const autoCompleteJS = new autoComplete({
-        placeHolder: "Buscar paciente...",
-        threshold: 2,
-        diacritics: true,
-        data: {
-        src: async (query) => {
-            try {
-                const source = await fetch(`${BASE_URL}Api/Pacientes/Registro_paciente/readPacientes/${query}`);
-                const data = await source.json(); 
-                return data;
-            } catch (error) {
-                return error;
-            }
-        },
-            keys: ["nombre", "tel_cel"],
-        },
-
-        resultsList: {
-            tag: "ul",
-            id: "autoComplete_list",
-            class: "results_list",
-            destination: "#autoComplete",
-            position: "afterend",
-            maxResults: 100,
-            noResults: true,
-            element: (list, data) => {
-                if(!data.results.length){
-                $('#actualizar').hide();
-                const message = document.createElement("div");
-                message.setAttribute("class", "no_result");
-                message.innerHTML = `<span class="pd-x-20">Ningún resultado para "${data.query}". Agregue los datos del paciente para continuar.</span> 
-                <br><br>
-                <div class="pd-x-20">
-                    <button id="agregar" type="submit" class="btn btn-success pd-x-20 float-right"><i class="fa fa-plus" aria-hidden="true"></i> AGREGAR PACIENTE</button>
-                </div>`;
-                list.appendChild(message);
-                } else {
-                const message = document.createElement("div");
-                message.setAttribute("class", "no_result");
-                list.appendChild(message);
+            placeHolder: "Buscar paciente...",
+            threshold: 2,
+            diacritics: true,
+            data: {
+            src: async (query) => {
+                try {
+                    const source = await fetch(`${BASE_URL}Api/Pacientes/Registro_paciente/readPacientes/${query}`);
+                    const data = await source.json(); 
+                    return data;
+                } catch (error) {
+                    return error;
                 }
-                list.setAttribute("data-parent", "food-list");
             },
-        },
-        
-        resultItem: {
-        highlight: true,
-            element: (item, data) => {
-                
-                item.innerHTML = `
-                <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; color: black !important; font-size: 1.2rem !important">
-                ${data.match}
-                </span>
-                
-                <span style="display: flex; align-items: center; font-size: 13px; font-weight: 100; color: black !important; text-transform: uppercase; font-size: 1rem !important" color: rgba(0,0,0,.2);">
-                ${data.value.tel_cel}
-                </span>`;
-                $('#actualizar').show();
+                keys: ["nombre", "tel_cel"],
             },
-        },
 
-        events: {
-            input: {
-                selection: (event) => {
-                    $("#autoComplete").val(event.detail.selection.value.nombre)
-                    $("#id_paciente").val(event.detail.selection.value.id)
+            resultsList: {
+                tag: "ul",
+                id: "autoComplete_list",
+                class: "results_list",
+                destination: "#autoComplete",
+                position: "afterend",
+                maxResults: 100,
+                noResults: true,
+                element: (list, data) => {
+                    if(!data.results.length){
+                    $('#actualizar').hide();
+                    const message = document.createElement("div");
+                    message.setAttribute("class", "no_result");
+                    message.innerHTML = `<span class="pd-x-20">Ningún resultado para "${data.query}". Agregue los datos del paciente para continuar.</span> 
+                    <br><br>
+                    <div class="pd-x-20">
+                        <button id="agregar" type="submit" class="btn btn-success pd-x-20 float-right"><i class="fa fa-plus" aria-hidden="true"></i> AGREGAR PACIENTE</button>
+                    </div>`;
+                    list.appendChild(message);
+                    } else {
+                    const message = document.createElement("div");
+                    message.setAttribute("class", "no_result");
+                    list.appendChild(message);
+                    }
+                    list.setAttribute("data-parent", "food-list");
+                },
+            },
+            
+            resultItem: {
+            highlight: true,
+                element: (item, data) => {
+                    
+                    item.innerHTML = `
+                    <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; color: black !important; font-size: 1.2rem !important">
+                    ${data.match}
+                    </span>
+                    
+                    <span style="display: flex; align-items: center; font-size: 13px; font-weight: 100; color: black !important; text-transform: uppercase; font-size: 1rem !important" color: rgba(0,0,0,.2);">
+                    ${data.value.tel_cel}
+                    </span>`;
+                    $('#actualizar').show();
+                },
+            },
+
+            events: {
+                input: {
+                    selection: (event) => {
+                        $("#autoComplete").val(event.detail.selection.value.nombre)
+                        $("#id_paciente").val(event.detail.selection.value.id)
+                    }
                 }
             }
-        }
-    });
+        });
     }
 </script>
