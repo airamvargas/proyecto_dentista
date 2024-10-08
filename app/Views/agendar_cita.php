@@ -45,15 +45,15 @@
                 <form id="form_cita">
                     <div class="form-group">
                         <label class="form-control-label">Fecha y hora: </label>
-                        <input id="fechaH" class="form-control" type="text" name="fecha" value="" placeholder="" readonly>
+                        <input id="fechaH" class="form-control" type="text" name="fecha" readonly>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Nombre paciente: </label>
-                        <input id="autoComplete" class="form-control" type="text" name="paciente" style="background-color: white !important; color: rgba(0,0,0,.8) !important; border: black solid 1px !important;">
+                        <input id="autoComplete" class="form-control" type="text" style="background-color: white !important; color: rgba(0,0,0,.8) !important; border: black solid 1px !important;">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Comentarios: <span class="tx-danger"></span></label>
-                        <textarea rows="3" id="comentarios" class="form-control" placeholder="Comentarios de la cita"></textarea>
+                        <textarea rows="3" name="comentarios" class="form-control" placeholder="Comentarios de la cita"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -62,8 +62,8 @@
                 </form>
             </div>
             <div class="modal-footer justify-content-center">
-                <button id="send_cita" type="button" class="btn btn-teal pd-x-20"><i class="fa fa-check-circle-o fa-lg mr-1" aria-hidden="true"></i>Aceptar</button>
-                <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal"><i class="fa fa-times-circle fa-lg mr-1" aria-hidden="true"></i>Cancelar</button>
+                <button id="send_cita" type="button" class="btn btn-add pd-x-20"><i class="fa fa-check-circle-o fa-lg mr-1" aria-hidden="true"></i>Aceptar</button>
+                <button type="button" class="btn btn-cancelar pd-x-20" data-dismiss="modal"><i class="fa fa-times-circle fa-lg mr-1" aria-hidden="true"></i>Cancelar</button>
             </div>
         </div>
     </div><!-- modal-dialog -->
@@ -106,17 +106,20 @@
     calendario();
     autoComplete_input();
 
-    $(document).on('click', '#agendar_cita', function(e) {
+    $("#send_cita").on('click', function(){
+        $("#modal_alert").modal('toggle');
+    });
+
+    $('#agendar_cita').on('click', function(e) {
         console.log("Hola");
         e.preventDefault();
         let url = `${BASE_URL}Api/Pacientes/Agendar_cita/add_cita`;
-        let FORMDATA = new FormData($(this)[0]);
+        let FORMDATA = new FormData($('#form_cita')[0]);
         let form = $('#form_cita');
         let modal = $('#modal_cita');
-        send(url, FORMDATA, dataTable, modal, form);
-        $("#modal_alert")..modal('toggle');
-    });
-    
+        send(url, FORMDATA, false, modal, form);
+        $("#modal_alert").modal('toggle');
+    });    
 
     function calendario(result) {
         var calendarEl = document.getElementById('calendar');
@@ -242,10 +245,7 @@
                     const message = document.createElement("div");
                     message.setAttribute("class", "no_result");
                     message.innerHTML = `<span class="pd-x-20">Ningún resultado para "${data.query}". Agregue los datos del paciente para continuar.</span> 
-                    <br><br>
-                    <div class="pd-x-20">
-                        <button id="agregar" type="submit" class="btn btn-success pd-x-20 float-right"><i class="fa fa-plus" aria-hidden="true"></i> AGREGAR PACIENTE</button>
-                    </div>`;
+                    <br><br>`;
                     list.appendChild(message);
                     } else {
                     const message = document.createElement("div");

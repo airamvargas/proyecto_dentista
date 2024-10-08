@@ -22,9 +22,19 @@ class Agendar_cita extends ResourceController
         helper('messages');
     }
 
-    public function read(){
-        $data['data'] = $this->model->select('*')->findAll();
-        return $this->respond($data);
+    public function add_cita(){
+        $request = \Config\Services::request();
+        $date = str_replace('/', '-', $request->getPost('fecha'));
+        $datetime = date('Y-m-d H:i:s', strtotime($request->getPost('fecha')));
+        
+        $data = [
+            'id_paciente' => $request->getPost('id_paciente'),
+            'fecha' => $date,
+            'hora' => $datetime,
+            'observaciones' => $request->getPost('comentarios'),
+        ];
+
+        var_dump($data);
     }
 
     public function registro_paciente(){
