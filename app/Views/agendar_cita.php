@@ -105,6 +105,17 @@
     //get_fechas();
     calendario();
     autoComplete_input();
+
+    $(document).on('click', '#agendar_cita', function(e) {
+        console.log("Hola");
+        e.preventDefault();
+        let url = `${BASE_URL}Api/Pacientes/Agendar_cita/add_cita`;
+        let FORMDATA = new FormData($(this)[0]);
+        let form = $('#form_cita');
+        let modal = $('#modal_cita');
+        send(url, FORMDATA, dataTable, modal, form);
+        $("#modal_alert")..modal('toggle');
+    });
     
 
     function calendario(result) {
