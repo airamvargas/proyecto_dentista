@@ -25,7 +25,7 @@ class Agendar_cita extends ResourceController
     public function add_cita(){
         $request = \Config\Services::request();
         $date = str_replace('/', '-', $request->getPost('fecha'));
-        $datetime = date('Y-m-d H:i:s', strtotime($request->getPost('fecha')));
+        $datetime = date('H:i:s', strtotime($request->getPost('fecha')));
         
         $data = [
             'id_paciente' => $request->getPost('id_paciente'),

@@ -10,7 +10,7 @@ class Pacientes extends Model
     protected $primaryKey = 'id';
     protected $returnType="array";
     protected $useSoftDeletes = true;
-    protected $allowedFields = ['nombre','sex', 'f_nacimiento', 'lugar_nac', 'tel_casa', '', 'direccion', 'created_at', 'updated_at', 'deleted_at'];
+    protected $allowedFields = ['nombre','sex', 'f_nacimiento', 'lugar_nac', 'tel_casa', 'tel_cel', 'direccion', 'created_at', 'updated_at', 'deleted_at'];
     protected $useTimestamps = true;
     protected $deletedField  = 'deleted_at';
     protected $validationRules    = [];
