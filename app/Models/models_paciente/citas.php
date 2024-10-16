@@ -10,7 +10,7 @@ class citas extends Model
     protected $primaryKey = 'id';
     protected $returnType="array";
     protected $useSoftDeletes = true;
-    protected $allowedFields = ['id_paciente','fecha', 'hora', 'observaciones', 'created_at', 'updated_at', 'deleted_at'];
+    protected $allowedFields = ['id_paciente','fecha', 'observaciones', 'created_at', 'updated_at', 'deleted_at'];
     protected $useTimestamps = true;
     protected $deletedField  = 'deleted_at';
     protected $validationRules    = [];

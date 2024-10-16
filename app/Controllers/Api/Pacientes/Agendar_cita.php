@@ -30,7 +30,6 @@ class Agendar_cita extends ResourceController
         $data = [
             'id_paciente' => $request->getPost('id_paciente'),
             'fecha' => $date,
-            'hora' => $datetime,
             'observaciones' => $request->getPost('comentarios'),
         ];
 
