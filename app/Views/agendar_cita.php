@@ -111,7 +111,7 @@
     });
 
     $('#agendar_cita').on('click', function(e) {
-        console.log("Hola");
+        $('#loader').toggle();
         e.preventDefault();
         let url = `${BASE_URL}Api/Pacientes/Agendar_cita/add_cita`;
         let FORMDATA = new FormData($('#form_cita')[0]);

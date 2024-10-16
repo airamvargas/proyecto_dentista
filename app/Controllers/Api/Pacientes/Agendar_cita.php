@@ -25,15 +25,30 @@ class Agendar_cita extends ResourceController
     public function add_cita(){
         $request = \Config\Services::request();
         $date = str_replace('/', '-', $request->getPost('fecha'));
-        $datetime = date('H:i:s', strtotime($request->getPost('fecha')));
+        $datetime = date('Y-m-d H:i:s', strtotime($date));
         
         $data = [
             'id_paciente' => $request->getPost('id_paciente'),
-            'fecha' => $date,
+            'fecha' => $datetime,
             'observaciones' => $request->getPost('comentarios'),
         ];
 
-        var_dump($data);
+        $this->model->insert($data);
+
+        $affected_rows = $this->db->affectedRows();
+        if($affected_rows){
+            $mensaje = [
+              'status' => 200,
+              'msg' => "CITA AGREGADA CON EXITO"
+            ];
+            return $this->respond($mensaje);
+        }else{
+            $mensaje = [
+                'status' => 400,
+                'msg' => "Hubo un error al guardar los datos. Intenta de nuevo",    
+            ]; 
+            return $this->respond($mensaje);         
+        }
     }
 
     public function registro_paciente(){
