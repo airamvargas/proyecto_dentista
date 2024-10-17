@@ -37,7 +37,7 @@ class Principal extends BaseController {
             $data_left['menu'] = get_menu();
             echo view('header', $data_header);
             echo view('head_panel');
-            echo view('dashboard');
+            echo view('Principal');
             echo view('right_panel');
             echo view('fotter_panel', $data_fotter);
         } else{

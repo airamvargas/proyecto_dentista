@@ -102,7 +102,7 @@
 </style>
 
 <script>
-    //get_fechas();
+    get_fechas();
     calendario();
     autoComplete_input();
 
@@ -117,8 +117,10 @@
         let FORMDATA = new FormData($('#form_cita')[0]);
         let form = $('#form_cita');
         let modal = $('#modal_cita');
-        send(url, FORMDATA, false, modal, form);
+        let ref = `Agendar_cita`
+        send(url, FORMDATA, false, modal, form, ref);
         $("#modal_alert").modal('toggle');
+        get_fechas();
     });    
 
     function calendario(result) {
@@ -200,8 +202,8 @@
 
         $.each(result, function (index, value) {
             calendar.addEvent({
-                title: "OCUPADO",
-                start: value.date_schedule,
+                title: value.observaciones,
+                start: value.fecha,
                 allDay: false,
                 color: '#ff9f89'
     
@@ -210,6 +212,29 @@
         });
         calendar.render();
     
+    }
+
+    function get_fechas() {
+        //$('#loader').toggle();
+        var url_citas = `${BASE_URL}Api/Pacientes/Agendar_cita/get_fechas`;
+
+        $.ajax({
+            url: url_citas,
+            type: "POST",
+            //data: JSON.stringify(propietario),
+            dataType: 'json',
+            success: function(result) {
+                console.log(result);
+                calendario(result);
+            },
+            error: function(xhr, resp, text) {
+                console.log(xhr, resp, text);
+                $('#loader').toggle();
+                $('#error-alert').show();
+                $('#error').text(' HA OCURRIDO UN ERROR INESPERADO');
+
+            }
+        })
     }
 
     //FUNCION PARA EL INPUT DE AUTOCOMPLETE
