@@ -60,4 +60,10 @@ class Agendar_cita extends ResourceController
         $data['data'] = $this->model->get_citas();
         return $this->respond($data, 200);
     }
+
+    public function read_cita(){
+        $id_cita = $_POST['id_cita'];
+        $data = $this->model->read_cita($id_cita);
+        return $this->respond($data, 200);
+    }
 }
