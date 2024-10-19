@@ -56,10 +56,12 @@ $(document).on('click', '.reasignar', function(){
     method: 'post', //en este caso
     dataType: 'json',
     success: function (success) {
-      $('#fechaH').val(success[0].nombre);
-      $('#comentarios').val(success[0].sex);
-      $('#id_reasignar').val(success[0].f_nacimiento);
+      fecha =  moment(success[0].fecha).format('YYYY-MM-DD');
+      $('#fechaH').val(fecha);
+      $('#comentarios').val(success[0].observaciones);
+      $('#id_reasignar').val(success[0].id);
       $('#modal_reasignar').modal('toggle');
+      get_horasdip();
       $('#loader').toggle();
     },
     error: function (xhr, text_status) {
@@ -67,3 +69,18 @@ $(document).on('click', '.reasignar', function(){
     }
   });
 });
+
+function get_horasdip(){
+  $("#horasdisp").empty();
+  let id_cita = $("#id_cita").val();
+  let fecha = $("#fechaH").val()
+
+  $('#loader').toggle();
+  let url = `${BASE_URL}Api/Pacientes/Agendar_cita/get_horasdip/${id_folio}/${fecha}`;
+  fetch(url).then(response => response.json()).catch(err => alert(err))
+  .then(response => {
+    return response;
+  }).catch(err => alert(err))
+  
+}
+

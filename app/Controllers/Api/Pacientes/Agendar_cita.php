@@ -66,4 +66,7 @@ class Agendar_cita extends ResourceController
         $data = $this->model->read_cita($id_cita);
         return $this->respond($data, 200);
     }
+    public function get_horasdip(){
+        
+    }
 }

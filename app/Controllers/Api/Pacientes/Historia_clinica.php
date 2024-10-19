@@ -24,7 +24,6 @@ class Historia_clinica extends ResourceController
 
     public function registro_paciente(){
         $request = \Config\Services::request();
-        
         $data = [
             'nombre' => $request->getPost('nombre'),
             'sex' => $request->getPost('sex'),
