@@ -11,7 +11,7 @@ class Principal extends BaseController {
         if($session){
             //var_dump($session);
             $data_fotter['scripts'] = [
-                "../lib/datatables-responsive/dataTables.responsive.js",
+                "../lib/datatables-responsive/dataTables.responsive.js", "Generales/Fetch.js",
                 "principal.js"
             ];
 

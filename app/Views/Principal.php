@@ -50,7 +50,7 @@
                 <div class="card pd-20 pd-sm-40">
                     <h6 class="card-body-title">Datos de la cita</h6>
                     <p class="mg-b-20 mg-sm-b-30">Llenar todos los campos</p>
-                    <form id="updateCitas" method="POST" enctype="multipart/form-data">
+                    <form id="reasignarCitas" method="POST" enctype="multipart/form-data">
                         <div class="form-layout">
 							<div class="mg-t-20">
 								<label class="form-control-label">Fecha: </label>
@@ -95,7 +95,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" id="eliminarPaciente" class="formDelete">
+            <form method="POST" id="cancelarCita" class="formDelete">
                 <div class="pd-80 pd-sm-80 form-layout form-layout-4">
                     <h6 style="text-align:center;">¿Deseas continuar con esta acción?</h6>
                     <br>

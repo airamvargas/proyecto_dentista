@@ -70,6 +70,21 @@ $(document).on('click', '.reasignar', function(){
   });
 });
 
+$(document).on('change', '#fechaH', function(){
+  get_horasdip();
+});
+
+$(document).on('submit', '#reasignarCitas', function(e){
+  e.preventDefault();
+    //document.getElementById('btn_eliminar').disabled = true;
+    $('#loader').toggle();
+    let url = `${BASE_URL}Api/Pacientes/Agendar_cita/reasignar`;
+    let FORMDATA = new FormData($(this)[0]);
+    let form = $('#reasignarCitas');
+    let modal = $('#modal_reasignar');
+    send(url, FORMDATA, citas, modal, form);
+});
+
 function get_horasdip(){
   $("#horasdisp").empty();
   let id_cita = $("#id_reasignar").val();

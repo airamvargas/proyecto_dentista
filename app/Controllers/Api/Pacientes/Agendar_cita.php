@@ -113,4 +113,32 @@ class Agendar_cita extends ResourceController
         }
         return $this->respond($data2, 200);
     }
+
+    public function reasignar(){
+        $request = \Config\Services::request();
+        $date = $request->getPost('fecha')." ". $request->getPost('horasdisp');
+        $datetime = date('Y-m-d H:i:s', strtotime($date));
+        
+        $data = [
+            'fecha' => $datetime,
+            'observaciones' => $request->getPost('comentarios'),
+        ];
+
+        $this->model->update($request->getPost('id_reasignar'), $data);
+
+        $affected_rows = $this->db->affectedRows();
+        if($affected_rows){
+            $mensaje = [
+              'status' => 200,
+              'msg' => "CITA MOFICADA CON EXITO"
+            ];
+            return $this->respond($mensaje);
+        }else{
+            $mensaje = [
+                'status' => 400,
+                'msg' => "Hubo un error al guardar los datos. Intenta de nuevo",    
+            ]; 
+            return $this->respond($mensaje);         
+        }
+    }
 }
