@@ -90,7 +90,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content bd-0 tx-14">
             <div class="modal-header bg-danger pd-x-20">
-                <h6 class="tx-14 mg-b-0 tx-uppercase text-white tx-bold">ELIMINAR CITA</h6>
+                <h6 class="tx-14 mg-b-0 tx-uppercase text-white tx-bold">CANCELAR CITA</h6>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Cerrar">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -103,8 +103,8 @@
                     <input type="hidden" name="id" id="id_delete">
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button id="delete-btn" type="submit" class="btn btn-danger pd-x-20"><i class="fa fa-trash mr-1"
-                            aria-hidden="true"></i>Eliminar</button>
+                    <button id="delete-btn" type="submit" class="btn btn-danger pd-x-20"><i class="fa fa-ban mr-1"
+                            aria-hidden="true"></i>Cancelar</button>
                     <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal"><i
                             class="fa fa-times mr-1" aria-hidden="true"></i>Cancelar</button>
                 </div>

@@ -26,4 +26,12 @@ class citas extends Model
         return $this->asArray()->select('citas.id, fecha, observaciones, id_paciente')->where('citas.id', $id_cita)
         ->find();
     }
+
+    public function horas_disp($fecha) {
+        return $this
+        ->select('DATE_FORMAT(fecha, "%T") AS horas')
+        ->where('fecha LIKE "%'.$fecha.'%"')
+        ->find();
+        
+    }
 }

@@ -34,7 +34,7 @@ var citas = $('#citas_programadas').DataTable({
       data: "id",
       render: function (data, type, row, meta) {
         return '<div class="d-flex justify-content-center"> <button id="' + data + '" title="Reasignar cita" class="btn btn-warning reasignar solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-clock-o" aria-hidden="true"></i></button>' +
-        '<button id="' + data + '"  class="btn btn-danger delete solid pd-x-20 btn-circle btn-sm" title="Eliminar cita" data-toggle="modal" data-target="#modal_delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button></div>'
+        '<button id="' + data + '"  class="btn btn-danger delete solid pd-x-20 btn-circle btn-sm" title="Cancelar cita" data-toggle="modal" data-target="#modal_delete"><i class="fa fa-ban" aria-hidden="true"></i></button></div>'
       }
     },
   ],
@@ -61,8 +61,8 @@ $(document).on('click', '.reasignar', function(){
       $('#comentarios').val(success[0].observaciones);
       $('#id_reasignar').val(success[0].id);
       $('#modal_reasignar').modal('toggle');
-      get_horasdip();
       $('#loader').toggle();
+      get_horasdip();
     },
     error: function (xhr, text_status) {
       $('#loader').toggle();
@@ -72,15 +72,18 @@ $(document).on('click', '.reasignar', function(){
 
 function get_horasdip(){
   $("#horasdisp").empty();
-  let id_cita = $("#id_cita").val();
+  let id_cita = $("#id_reasignar").val();
   let fecha = $("#fechaH").val()
-
   $('#loader').toggle();
-  let url = `${BASE_URL}Api/Pacientes/Agendar_cita/get_horasdip/${id_folio}/${fecha}`;
+  let url = `${BASE_URL}Api/Pacientes/Agendar_cita/get_horasdip/${id_cita}/${fecha}`;
   fetch(url).then(response => response.json()).catch(err => alert(err))
   .then(response => {
-    return response;
+    $("#horasdisp").append(`<option  value="">Selecciona una hora</option>`);
+    const ch = response;
+    $(ch).each(function(i, v) {
+      $("#horasdisp").append(`<option  value="${v}">${v}</option>`);
+    }); 
+    $('#loader').toggle();
   }).catch(err => alert(err))
-  
 }
 
