@@ -1,5 +1,5 @@
 <?php
-if(!function_exists('get_menu')) {
+/*if(!function_exists('get_menu')) {
     function get_menu() {
         $session = session();
         $token = $session->get('token');
@@ -50,6 +50,6 @@ if(!function_exists('get_menu')) {
         return array(); 
  
     }
-}
+}*/
 ?>
 

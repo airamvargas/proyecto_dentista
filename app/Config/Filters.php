@@ -30,7 +30,7 @@ class Filters extends BaseConfig
 	 */
 	public $globals = [
 		'before' => [
-			//'auth' =>['except' => ['Home','Login/verify_login','Login/sign_out','Resultados/Resultados_paciente/index/*','Api/*']]
+			'auth' =>['except' => ['Home','Login/verify_login','Login/sign_out','Resultados/Resultados_paciente/index/*','Api/*']]
 			// 'honeypot',
 			// 'csrf',
 		],

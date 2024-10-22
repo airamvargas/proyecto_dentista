@@ -6,9 +6,7 @@ use App\Controllers\BaseController;
 class Agendar_cita extends BaseController {
 
     public function index() {
-        helper('menu');
         $session = session();
-        $data_left['menu'] = get_menu();
         //Js Scripts ['script1.js' , 'script2.js' , 'script3.js']
         $data_fotter['scripts'] = ["../lib/datatables/jquery.dataTables.js", "../lib/datatables-responsive/dataTables.responsive.js", "Generales/Fetch.js"];
 

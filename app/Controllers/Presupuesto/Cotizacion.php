@@ -7,7 +7,6 @@ use App\Models\Access;
 
 class Cotizacion extends BaseController {
     public function index() {
-        helper('menu');
         $session = session();
         if($session){
             //var_dump($session);
@@ -35,7 +34,6 @@ class Cotizacion extends BaseController {
             //Vars
             $data_header['title'] = "Presupuesto";
             $data_header['description'] = "Generar un presupuesto y/o cotización para un paciente";
-            $data_left['menu'] = get_menu();
             echo view('header', $data_header);
             echo view('head_panel');
             echo view('Presupuesto/Cotizacion');

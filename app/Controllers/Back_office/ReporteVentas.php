@@ -9,6 +9,7 @@ Descripcion: Controlador del reporte de ventas */
 namespace App\Controllers\Back_office;
 use App\Controllers\BaseController;
 
+
 class ReporteVentas extends BaseController
 {
 
