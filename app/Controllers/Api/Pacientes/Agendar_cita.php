@@ -141,4 +141,30 @@ class Agendar_cita extends ResourceController
             return $this->respond($mensaje);         
         }
     }
+
+    public function cancelar(){
+        $request = \Config\Services::request();
+
+        $data = [
+            'status_cita' => 2
+        ];
+
+        $this->model->update($request->getPost('id'), $data);
+        $this->model->delete($request->getPost('id'));
+
+        $affected_rows = $this->db->affectedRows();
+        if($affected_rows){
+            $mensaje = [
+              'status' => 200,
+              'msg' => "CITA CANCELADA"
+            ];
+            return $this->respond($mensaje);
+        }else{
+            $mensaje = [
+                'status' => 400,
+                'msg' => "Hubo un error al guardar los datos. Intenta de nuevo",    
+            ]; 
+            return $this->respond($mensaje);         
+        }
+    }
 }

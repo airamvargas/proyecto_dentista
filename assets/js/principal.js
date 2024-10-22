@@ -34,7 +34,7 @@ var citas = $('#citas_programadas').DataTable({
       data: "id",
       render: function (data, type, row, meta) {
         return '<div class="d-flex justify-content-center"> <button id="' + data + '" title="Reasignar cita" class="btn btn-warning reasignar solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-clock-o" aria-hidden="true"></i></button>' +
-        '<button id="' + data + '"  class="btn btn-danger delete solid pd-x-20 btn-circle btn-sm" title="Cancelar cita" data-toggle="modal" data-target="#modal_delete"><i class="fa fa-ban" aria-hidden="true"></i></button></div>'
+        '<button id="' + data + '"  class="btn btn-danger cancelar solid pd-x-20 btn-circle btn-sm" title="Cancelar cita"><i class="fa fa-ban" aria-hidden="true"></i></button></div>'
       }
     },
   ],
@@ -76,13 +76,30 @@ $(document).on('change', '#fechaH', function(){
 
 $(document).on('submit', '#reasignarCitas', function(e){
   e.preventDefault();
-    //document.getElementById('btn_eliminar').disabled = true;
-    $('#loader').toggle();
-    let url = `${BASE_URL}Api/Pacientes/Agendar_cita/reasignar`;
-    let FORMDATA = new FormData($(this)[0]);
-    let form = $('#reasignarCitas');
-    let modal = $('#modal_reasignar');
-    send(url, FORMDATA, citas, modal, form);
+  //document.getElementById('btn_eliminar').disabled = true;
+  $('#loader').toggle();
+  let url = `${BASE_URL}Api/Pacientes/Agendar_cita/reasignar`;
+  let FORMDATA = new FormData($(this)[0]);
+  let form = $('#reasignarCitas');
+  let modal = $('#modal_reasignar');
+  send(url, FORMDATA, citas, modal, form);
+});
+
+$(document).on('click', '.cancelar', function(){
+  let id_cita = $(this).attr('id');
+  $('#id_cancelar').val(id_cita);
+  $('#modal_delete').modal('toggle');
+});
+
+$(document).on('submit', '#cancelarCita', function(e){
+  e.preventDefault();
+  //document.getElementById('btn_eliminar').disabled = true;
+  $('#loader').toggle();
+  let url = `${BASE_URL}Api/Pacientes/Agendar_cita/cancelar`;
+  let FORMDATA = new FormData($(this)[0]);
+  let form = $('#cancelarCita');
+  let modal = $('#modal_delete');
+  send(url, FORMDATA, citas, modal, form);
 });
 
 function get_horasdip(){

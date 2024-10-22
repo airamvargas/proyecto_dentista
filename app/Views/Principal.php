@@ -1,8 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.0/chart.min.js" integrity="sha512-asxKqQghC1oBShyhiBwA+YgotaSYKxGP1rcSYTDrB0U6DxwlJjU59B67U8+5/++uFjcuVM8Hh5cokLjZlhm3Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link href="../../../assets/lib/SpinKit/spinkit.css" rel="stylesheet">
-
 <div id="loader" class="modal fade show">
     <div class="modal-dialog modal-dialog-vertical-center" role="document">
         <div class="d-flex ht-300 pos-relative align-items-center">
@@ -100,7 +95,7 @@
                     <h6 style="text-align:center;">¿Deseas continuar con esta acción?</h6>
                     <br>
                     <p style="color:red; text-align:center;">No se podrá deshacer la acción una vez realizada.</p>
-                    <input type="hidden" name="id" id="id_delete">
+                    <input type="hidden" name="id" id="id_cancelar">
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button id="delete-btn" type="submit" class="btn btn-danger pd-x-20"><i class="fa fa-ban mr-1"
