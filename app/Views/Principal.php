@@ -24,6 +24,8 @@
                     <th class="wd-15p text-center">Hora</th>
                     <th class="wd-15p text-center">Paciente</th>
                     <th class="wd-15p text-center">Observaciones</th>
+                    <th class="wd-15p text-center">Cita actual</th>
+                    <th class="wd-15p text-center">Citas Anteriores</th>
                     <th class="wd-15p text-center">ACCIONES</th>
                 </tr>
             </thead>

@@ -31,6 +31,18 @@ var citas = $('#citas_programadas').DataTable({
       data: 'observaciones'
     },
     {
+      data: 'id',
+      render: function (data, type, row, meta) {
+        return `<div class="d-flex justify-content-center"> <button id="' + data + '" title="Cita actual " class="btn btn-teal actual solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-medkit" aria-hidden="true"></i></button>`
+      }
+    },
+    {
+      data: 'id',
+      render: function (data, type, row, meta) {
+        return `<div class="d-flex justify-content-center"> <button title="Citas anteriores" class="btn btn-primary historial solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-eye" aria-hidden="true"></i></button>`
+      }
+    },
+    {
       data: "id",
       render: function (data, type, row, meta) {
         return '<div class="d-flex justify-content-center"> <button id="' + data + '" title="Reasignar cita" class="btn btn-warning reasignar solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-clock-o" aria-hidden="true"></i></button>' +
