@@ -11,10 +11,10 @@
 
 <div class="container">
     <div class="row col-12 justify-content-center">
-        <div class="col-8 mt-5">
+        <div id="n_paciente" class="col-8 mt-5">
             <h3 class="text-left">Paciente: Airam Vargas</h3>
         </div>
-        <div class="col-4 mt-5">
+        <div id="div_folio" class="col-4 mt-5">
             <h3 class="text-center">Folio: 6</h3>
         </div>
     </div>
