@@ -33,13 +33,13 @@ var citas = $('#citas_programadas').DataTable({
     {
       data: 'id',
       render: function (data, type, row, meta) {
-        return `<div class="d-flex justify-content-center"> <button id="' + data + '" title="Cita actual " class="btn btn-teal actual solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-medkit" aria-hidden="true"></i></button>`
+        return `<div class="d-flex justify-content-center"><a href="${BASE_URL}Pacientes/Cita_actual/index/${data}/${row.id_paciente}"><button title="Cita actual" class="btn btn-teal actual solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-medkit" aria-hidden="true"></i></button></a></div>`
       }
     },
     {
       data: 'id',
       render: function (data, type, row, meta) {
-        return `<div class="d-flex justify-content-center"> <button title="Citas anteriores" class="btn btn-primary historial solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-eye" aria-hidden="true"></i></button>`
+        return `<div class="d-flex justify-content-center"><a href="${BASE_URL}Pacientes/Detalle_consultas/index/${row.id_paciente}"><button title="Citas anteriores" class="btn btn-primary historial solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-eye" aria-hidden="true"></i></button></a></div>`
       }
     },
     {
