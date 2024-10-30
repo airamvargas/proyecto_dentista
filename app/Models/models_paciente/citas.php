@@ -32,6 +32,13 @@ class citas extends Model
         ->select('DATE_FORMAT(fecha, "%T") AS horas')
         ->where('fecha LIKE "%'.$fecha.'%"')
         ->find();
-        
+    }
+
+    public function getNombre($id_cita){
+        return $this->asArray()
+        ->select('citas.id, pacientes.nombre AS paciente, id_paciente')
+        ->join('pacientes', 'pacientes.id = citas.id_paciente')
+        ->where('citas.id', $id_cita)
+        ->find();
     }
 }

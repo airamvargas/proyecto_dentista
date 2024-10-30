@@ -22,8 +22,8 @@ class Consulta extends ResourceController
         helper('messages');
     }
 
-    public function getNombre(){
-        $data['data'] = $this->model->select('*')->findAll();
+    public function getNombre($id_cita){
+        $data = $this->model->getNombre($id_cita);
         return $this->respond($data);
     }
 }
