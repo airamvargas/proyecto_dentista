@@ -14,6 +14,22 @@
         <div id="n_paciente" class="col-8 mt-5"></div>
         <div id="div_folio" class="col-4 mt-5"></div>
     </div>
+
+    <div class="pd-20 pd-sm-20 form-layout form-layout-4">
+                
+        <div class="row">
+            <div class="form-group mg-b-0 col-lg-8">
+                <label class="form-control-label mg-b-10">Tratamiento a realizar: 
+                <span class="tx-danger">*</span>
+                </label>
+                <input type="text" name="n_trat" id="autoComplete" class="mg-t-10 form-control universidad" autocomplete="off" required style="background-color: white !important; color: rgba(0,0,0,.8) !important; border: black solid 1px !important;">
+            </div>
+
+            <div class="form-group mg-b-0 col-lg-4">
+                <input type="text" name="nombre_user" id="autoComplete" class="mg-t-10 form-control universidad" autocomplete="off" required style="background-color: white !important; color: rgba(0,0,0,.8) !important; border: black solid 1px !important;">
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
