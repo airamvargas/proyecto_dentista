@@ -26,7 +26,7 @@
             </div>
 
             <div class="form-group mg-b-0 col-lg-4">
-                <input type="text" name="nombre_user" id="autoComplete" class="mg-t-10 form-control universidad" autocomplete="off" required style="background-color: white !important; color: rgba(0,0,0,.8) !important; border: black solid 1px !important;">
+            <button id="agregar" type="submit" class="btn btn-purple"><i class="fa fa-plus-circle" aria-hidden="true"></i> AGREGAR PRODUCTO</button>
             </div>
         </div>
     </div>
