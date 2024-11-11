@@ -44,7 +44,7 @@
             </div>
             
             <div class="form-group mg-b-0 col-xl-3 col-lg-3 col-md-6 mg-t-35">
-                <button id="agregar" type="submit" class="btn btn-otro d-flex justify-content-center"><i class="fa fa-plus-circle" aria-hidden="true"></i> AGREGAR TRATAMIENTO</button>
+                <button id="agregar" type="submit" class="btn btn-otro d-flex justify-content-center"><i class="fa fa-plus-circle mr-1" aria-hidden="true"></i> AGREGAR TRATAMIENTO</button>
             </div>
         </div>
     </div>
