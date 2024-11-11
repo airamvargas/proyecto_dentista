@@ -29,4 +29,11 @@ class Model_tratamientos extends Model
         ->where('tratamientos.id', $id)
         ->find();
     }
+
+    public function readTratamiento($busqueda){
+        return $this->asArray()
+        ->select('id, nombre, precio, observaciones')
+        ->like('tratamientos.nombre', $busqueda)
+        ->find();
+    }
 }

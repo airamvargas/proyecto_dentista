@@ -110,4 +110,10 @@ class Procedimientos extends ResourceController
             return $this->respond($mensaje);      
         }
     }
+
+    //FUNCION BUSQUEDA PARA AUTOCOMPLETE
+    public function readTratamiento($busqueda){
+        $data = $this->model->readTratamiento($busqueda);
+        return $this->respondCreated($data, 200);    
+    }
 }

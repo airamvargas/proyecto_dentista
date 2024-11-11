@@ -35,7 +35,7 @@ class Cita_actual extends BaseController {
             $data_header['styles'] = ["starlight.css", "clinica_dental.css",  "../lib/datatables/jquery.dataTables.css"];
             
             //Vars
-            $data_header['title'] = "Detalle de Consultas";
+            $data_header['title'] = "Consulta en proceso";
             $data_header['description'] = "";
             $data['id_paciente'] = $id_paciente;
             $data['id_cita'] = $id_cita;

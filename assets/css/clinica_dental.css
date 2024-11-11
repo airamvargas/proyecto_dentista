@@ -175,6 +175,13 @@ input, button, select, optgroup, textarea{
     height: 40px !important;
 }
 
+.container-xxl{
+    max-width: 1320px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /* FUENTES DE LETRAS */
 @font-face {
     font-family: Paper_bold;
