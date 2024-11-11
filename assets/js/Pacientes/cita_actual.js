@@ -1,4 +1,4 @@
-let getData = () => {
+let getDatos = () => {
     $('#loader').toggle();
     let url = `${BASE_URL}Api/Pacientes/Consulta/getNombre/${id_cita}`;
     fetch(url).then(response => response.json()).catch(err => alert(err))
@@ -10,8 +10,75 @@ let getData = () => {
         }).catch(err => alert(err))
 }
 
-getData();
-//autoComplete_input();
+getDatos();
+
+$(document).on('submit', '#insertTratamiento', function(e){
+    e.preventDefault();
+    document.getElementById('agregar').disabled = true;
+    $('#loader').toggle();
+    let url = `${BASE_URL}Api/Pacientes/Cita_actual/add_tratamiento`;
+    let FORMDATA = new FormData($(this)[0]);
+    let form = $('#insertTratamiento');
+    //let modal = $('#modal_reasignar');
+    send(url, FORMDATA, false, false, form);
+    document.getElementById('agregar').disabled = false;
+});
+
+var tratamientos = $('#tratamientos').DataTable({
+    ajax: {
+      url: BASE_URL + '/Api/Pacientes/Cita_actual/trata_x_cita',
+      data: { 'id_cita': id_cita },
+      type: "post",
+    },
+    lengthMenu: [
+      [10, 25, 50, 100, 999999],
+      ["10", "25", "50", "100", "Mostrar todo"],
+    ],
+    columns: [
+      {
+        data: 'fecha',
+        render: function (data, type, row, meta) {
+          return moment(data).format("DD-MMM-YY");
+        }
+      },
+      {
+        data: 'fecha',
+        render: function (data, type, row, meta) {
+          return moment(data).format('LT')
+        }
+      },
+      {
+        data: 'paciente'
+      },
+      {
+        data: 'observaciones'
+      },
+      {
+        data: 'id',
+        render: function (data, type, row, meta) {
+          return `<div class="d-flex justify-content-center"><a href="${BASE_URL}Pacientes/Cita_actual/index/${data}/${row.id_paciente}"><button title="Cita actual" class="btn btn-teal actual solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-medkit" aria-hidden="true"></i></button></a></div>`
+        }
+      },
+      {
+        data: 'id',
+        render: function (data, type, row, meta) {
+          return `<div class="d-flex justify-content-center"><a href="${BASE_URL}Pacientes/Detalle_consultas/index/${row.id_paciente}"><button title="Citas anteriores" class="btn btn-primary historial solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-eye" aria-hidden="true"></i></button></a></div>`
+        }
+      },
+      {
+        data: "id",
+        render: function (data, type, row, meta) {
+          return '<div class="d-flex justify-content-center"> <button id="' + data + '" title="Reasignar cita" class="btn btn-warning reasignar solid pd-x-20 btn-circle btn-sm mr-2"><i class="fa fa-clock-o" aria-hidden="true"></i></button>' +
+          '<button id="' + data + '"  class="btn btn-danger cancelar solid pd-x-20 btn-circle btn-sm" title="Cancelar cita"><i class="fa fa-ban" aria-hidden="true"></i></button></div>'
+        }
+      },
+    ],
+    language: {
+      searchPlaceholder: 'Buscar...',
+      sSearch: '',
+      lengthMenu: '_MENU_ Filas por página',
+    }
+});
 
 //FUNCION PARA EL INPUT DE AUTOCOMPLETE
 const autoCompleteJS = new autoComplete({

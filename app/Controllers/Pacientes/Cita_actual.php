@@ -15,7 +15,7 @@ class Cita_actual extends BaseController {
             //var_dump($session);
             $data_fotter['scripts'] = [
                 "../lib/datatables-responsive/dataTables.responsive.js",
-                "Pacientes/cita_actual.js"
+                "Pacientes/cita_actual.js", "Generales/Fetch.js"
             ];
 
             //External js
