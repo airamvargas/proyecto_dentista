@@ -1,6 +1,6 @@
 <?php $session = session(); ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary row">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top row">
   <div class="container-fluid col-12">
     <!-- <button class="navbar-toggler col-lg-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>

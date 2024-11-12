@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container mt-5">
     <div class="row col-12 justify-content-center">
         <div class="col-8 mt-4">
             <h1 class="text-center">CLINICA DENTAL - LA VIGA</h1>

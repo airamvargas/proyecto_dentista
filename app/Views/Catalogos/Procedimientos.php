@@ -11,8 +11,8 @@
 </div>
 
 <!-- ########## START: MAIN PANEL ########## -->
-<div class="container-fluid">
-    <div class="sl-pagebody">
+<div class="container-fluid mt-5">
+    <div class="container-xxl">
         <div class="card pd-20 pd-sm-40">
             <div class="sl-page-title">
                 <h5 class="text-uppercase title-text"><?= $title ?></h5>

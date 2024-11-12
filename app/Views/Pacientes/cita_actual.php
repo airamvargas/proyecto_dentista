@@ -62,8 +62,8 @@
                             <tr>
                                 <th class="wd-15p text-center">NOMBRE</th>
                                 <th class="wd-15p text-center">PREPARACIÓN</th>
-                                <th class="wd-10 text-center">PRECIO</th>
                                 <th class="wd-10 text-center">CANTIDAD</th>
+                                <th class="wd-10 text-center">PRECIO</th>
                                 <th class="wd-10 text-center">ACCIONES</th>
                             </tr>
                         </thead>
@@ -80,8 +80,8 @@
                     <div class="justify-content-center">
                        <!--  <button id="continuar" type="button" class="btn btn-success pd-x-20 ml-2 float-right"><i class="fa fa-arrow-right" aria-hidden="true"></i> SIGUIENTE</button>
                         <button id="imprimir" type="button" class="btn btn-primary pd-x-20 ml-2 float-right"><i class="fa fa-print" aria-hidden="true"></i> IMPRIMIR</button> -->
-                        <button id="enviar" type="button" class="btn btn-teal pd-x-20 ml-2 float-right"><i class="fa fa-paper-plane" aria-hidden="true"></i> ENVIAR</button>
-                        <button id="cancelar" type="button" class="btn btn-secondary pd-x-20 ml-2 float-right"><i class="fa fa-times" aria-hidden="true"></i> TERMINAR</button>
+                        <!-- <button id="enviar" type="button" class="btn btn-teal pd-x-20 ml-2 float-right"><i class="fa fa-paper-plane" aria-hidden="true"></i> ENVIAR</button> -->
+                        <button id="terminar" type="button" class="btn btn-secondary pd-x-20 ml-2 float-right"><i class="fa fa-times" aria-hidden="true"></i> TERMINAR</button>
                     </div>
                 </div>
             </div>

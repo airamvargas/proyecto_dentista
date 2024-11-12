@@ -32,7 +32,7 @@ class Cita_actual extends BaseController {
             ];
     
             //Css Shets
-            $data_header['styles'] = ["starlight.css", "clinica_dental.css",  "../lib/datatables/jquery.dataTables.css"];
+            $data_header['styles'] = ["starlight.css", "botones.css", "clinica_dental.css",  "../lib/datatables/jquery.dataTables.css"];
             
             //Vars
             $data_header['title'] = "Consulta en proceso";

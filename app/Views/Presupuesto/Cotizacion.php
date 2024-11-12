@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
     <div class="sl-pagebody">
         <div class="card pd-20 pd-sm-40">
 
