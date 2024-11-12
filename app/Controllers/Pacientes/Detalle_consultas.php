@@ -15,7 +15,7 @@ class Detalle_consultas extends BaseController {
             //var_dump($session);
             $data_fotter['scripts'] = [
                 "../lib/datatables-responsive/dataTables.responsive.js",
-                "principal.js"
+                "Pacientes/detalle_citas.js", "Generales/Fetch.js"
             ];
 
             //External js

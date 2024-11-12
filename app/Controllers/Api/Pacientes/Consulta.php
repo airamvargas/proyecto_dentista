@@ -9,6 +9,7 @@ helper('sendmail');
 
 use App\Models\models_paciente\citas as model;
 use App\Models\models_paciente\Tratamientos_x_cita as trata_x_cita; 
+use App\Models\models_paciente\Pacientes as pacientes; 
 
 class Consulta extends ResourceController
 {
@@ -20,6 +21,7 @@ class Consulta extends ResourceController
     { //Assign global variables
         $this->model = new model();
         $this->trata_x_cita = new trata_x_cita();
+        $this->pacientes = new pacientes();
         $this->db = db_connect();
         helper('messages');
     }
@@ -67,6 +69,11 @@ class Consulta extends ResourceController
     //OBTENER EL PRECIO TOTAL 
     public function getTotal($id_cita) {;
         $data = $this->trata_x_cita->get_total($id_cita);
+        return $this->respond($data);
+    }
+
+    public function getNombreHist($id_paciente){
+        $data = $this->pacientes->getNombre($id_paciente);
         return $this->respond($data);
     }
 

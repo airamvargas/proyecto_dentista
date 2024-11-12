@@ -30,4 +30,11 @@ class Pacientes extends Model
         ->where('pacientes.id', $id)
         ->find();
     }
+
+    public function getNombre($id_paciente){
+        return $this->asArray()
+        ->select('id, nombre, f_nacimiento')
+        ->like('pacientes.id', $id_paciente)
+        ->find();
+    }
 }
