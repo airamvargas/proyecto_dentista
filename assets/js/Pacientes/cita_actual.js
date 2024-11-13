@@ -15,7 +15,6 @@ let getTotal = () => {
   let url = `${BASE_URL}Api/Pacientes/Consulta/getTotal/${id_cita}`;
   fetch(url).then(response => response.json()).catch(err => alert(err))
     .then(response => {
-      console.log(response);
       $("#total").children().remove();
       total = `<span>${currency(response[0]['total'], { symbol: "$", separator: "," }).format()}</span>`
       $("#total").append(total);
@@ -66,7 +65,7 @@ var tratamientos = $('#tratamientos').DataTable({
     {
       data: "id",
       render: function (data, type, row, meta) {
-        return '<div class="d-flex justify-content-center"><button id="' + data + '"  class="btn btn-danger cancelar solid pd-x-20 btn-circle btn-sm" title="Eliminar tratamiento"><i class="fa fa-trash" aria-hidden="true"></i></button></div>'
+        return '<div class="d-flex justify-content-center"><button id="' + data + '"  class="btn btn-danger eliminar solid pd-x-20 btn-circle btn-sm" title="Eliminar tratamiento"><i class="fa fa-trash" aria-hidden="true"></i></button></div>'
       }
     },
   ],
@@ -75,6 +74,25 @@ var tratamientos = $('#tratamientos').DataTable({
     sSearch: '',
     lengthMenu: '_MENU_ Filas por página',
   }
+});
+
+//ELIMINAR PACIENTE
+$(document).on('click', '.eliminar', function(){
+  let id_trat = $(this).attr('id');
+  $('#modal_delete').modal('show');
+  $("#id_delete").val(id_trat);
+});
+
+$(document).on('submit', '#formDelete', function(e) {
+  e.preventDefault();
+  //document.getElementById('btn_eliminar').disabled = true;
+  $('#loader').toggle();
+  let url = `${BASE_URL}Api/Pacientes/Consulta/eliminarTrata`;
+  let FORMDATA = new FormData($(this)[0]);
+  let form = $('#formDelete');
+  let modal = $('#modal_delete');
+  send(url, FORMDATA, tratamientos, modal, form);
+  getTotal();
 });
 
 //FUNCION PARA EL INPUT DE AUTOCOMPLETE

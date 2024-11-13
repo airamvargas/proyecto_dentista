@@ -87,6 +87,34 @@
     </div>
 </div>
 
+<!--Modal delete-->
+<div id="modal_delete" class="modal fade">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content bd-0 tx-14">
+            <div class="modal-header bg-danger pd-x-20">
+                <h6 class="tx-14 mg-b-0 tx-uppercase text-white tx-bold">ELIMINAR TRATAMIENTO</h6>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST" id="formDelete" class="formDelete">
+                <div class="pd-80 pd-sm-80 form-layout form-layout-4">
+                    <h6 style="text-align:center;">¿Deseas continuar con esta acción?</h6>
+                    <br>
+                    <p style="color:red; text-align:center;">No se podrá deshacer la acción una vez realizada.</p>
+                    <input type="hidden" name="id" id="id_delete">
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button id="delete-btn" type="submit" class="btn btn-danger btnbtn-delete pd-x-20"><i class="fa fa-trash mr-1"
+                            aria-hidden="true"></i>Eliminar</button>
+                    <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal"><i
+                            class="fa fa-times mr-1" aria-hidden="true"></i>Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div><!-- modal-dialog -->
+</div><!-- modal -->
+
 <script>
     let id_paciente = <?php echo json_encode($id_paciente); ?>;
     let id_cita = <?php echo json_encode($id_cita); ?>;
