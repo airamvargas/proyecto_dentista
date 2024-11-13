@@ -92,6 +92,7 @@ $(document).on('submit', '#formDelete', function(e) {
   let form = $('#formDelete');
   let modal = $('#modal_delete');
   send(url, FORMDATA, tratamientos, modal, form);
+  document.getElementById('agregar').disabled = false;
   getTotal();
 });
 
